@@ -23,11 +23,7 @@ namespace One.Model.Auth
             Pendiente = 0, Activo = 1, Suspendido = 3, Cancelado = 9
         }
 
-        public User()
-        {
-            _Id = LiteDB.ObjectId.NewObjectId().ToString();
-            _CreationDate = DateTime.Now;
-        }
+        public User() : base() { }
 
         [Column(Storage = "_Person", DbType = "NChar(24)", CanBeNull = false)]
         public string Person

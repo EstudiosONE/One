@@ -31,6 +31,14 @@ namespace One.Model.Misc
             get => _ModificationDate;
         }
 
+        // Constructores
+        public Table()
+        {
+            _Id = LiteDB.ObjectId.NewObjectId().ToString();
+            _CreationDate = DateTime.Now;
+            _ModificationDate = DateTime.Now;
+        }
+
         // Metodos de manipulación de datos
         protected void Modify<T>(T value, out T field)
         {
