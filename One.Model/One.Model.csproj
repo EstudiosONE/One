@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Auth\Token.cs" />
     <Compile Include="Auth\User.cs" />
+    <Compile Include="Misc\Table.cs" />
     <Compile Include="One.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
