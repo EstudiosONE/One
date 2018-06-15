@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "One.Installer.DataBase.SQL", "One.Installer.DataBase.SQL\One.Installer.DataBase.SQL.csproj", "{5E2C998B-B4C7-44AE-9253-7BA0F1C16493}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Cons", "Test.Cons\Test.Cons.csproj", "{A79AEE16-6727-452F-80DA-27DDF7642114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{5E2C998B-B4C7-44AE-9253-7BA0F1C16493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E2C998B-B4C7-44AE-9253-7BA0F1C16493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E2C998B-B4C7-44AE-9253-7BA0F1C16493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A79AEE16-6727-452F-80DA-27DDF7642114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A79AEE16-6727-452F-80DA-27DDF7642114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A79AEE16-6727-452F-80DA-27DDF7642114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A79AEE16-6727-452F-80DA-27DDF7642114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

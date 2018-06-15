@@ -44,8 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth\Token.cs" />
     <Compile Include="Auth\User.cs" />
+    <Compile Include="Auth\UserSecret.cs" />
+    <Compile Include="Misc\ModelException.cs" />
     <Compile Include="Misc\Table.cs" />
     <Compile Include="One.designer.cs">
       <AutoGen>True</AutoGen>
