@@ -8,7 +8,6 @@ namespace One.Model.Misc
 {
     public class ModelException : SystemException
     {
-
         // Propiedades
         public int Code { get; }
         public override string Message { get; }

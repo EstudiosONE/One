@@ -11,26 +11,23 @@ namespace One.Core.Storage
     {
         internal string CommonApplicationData { get => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Estudios One", "iGS"); }
 
-        public Server Server { get; }
+        public ServerLocation Server { get; }
 
         public Locations()
         {
-            Server = new Server(this);
+            Server = new ServerLocation(this);
         }
 
-
-    }
-
-    public class Server
-    {
-        private Locations Locations { get; }
-
-        internal Server(Locations locations)
+        public class ServerLocation
         {
-            Locations = locations;
+            private Locations Locations { get; }
+
+            internal ServerLocation(Locations locations)
+            {
+                Locations = locations;
+            }
+
+            public string CommonApplicationData { get => Path.Combine(Locations.CommonApplicationData, "Server"); }
         }
-
-        public string CommonApplicationData { get => Path.Combine(Locations.CommonApplicationData, "Server"); }
-
     }
 }

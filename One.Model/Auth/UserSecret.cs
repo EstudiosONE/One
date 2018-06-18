@@ -34,7 +34,11 @@ namespace One.Model.Auth
         }
 
         // Constructores
-        internal UserSecret() : base() { _IsActualSecret = true; }
+        internal UserSecret() 
+            : base()
+        {
+            _IsActualSecret = true;
+        }
         public UserSecret(string user, byte[] secret) : base()
         {
             _IsActualSecret = true;
