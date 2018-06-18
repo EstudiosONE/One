@@ -12,7 +12,6 @@ namespace One.Installer.DataBase.SQL
 
         readonly SQLDriver Driver;
 
-
         // Constructores
 
         /// <summary>
