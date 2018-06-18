@@ -54,7 +54,7 @@ namespace One.Core
                 initTask[i].Start();
                 var result = await initTask[i];
                 OnProgressEvent(new ProgressEventArgs() { TotalTask = TotalTask, CompletedTask = i + 1 });
-            };
+            }
         }
 
         protected virtual void OnProgressEvent(ProgressEventArgs e)
