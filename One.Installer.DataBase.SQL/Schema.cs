@@ -14,7 +14,6 @@ namespace One.Installer.DataBase.SQL
 
         readonly SQLDriver Driver;
 
-
         // Constructores
 
         /// <summary>
@@ -27,7 +26,6 @@ namespace One.Installer.DataBase.SQL
         }
 
         // Metodos públicos
-
 
         public void CreateSchemaBase()
         {
@@ -64,10 +62,6 @@ namespace One.Installer.DataBase.SQL
                         case 2714: break;
                         default: break;
                     }
-                }
-                catch(Exception ex)
-                {
-
                 }
             }
         }
