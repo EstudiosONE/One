@@ -52,6 +52,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\One.Core.Storage.One\One.Core.Storage.One.csproj">
+      <Project>{4f988cd0-6952-4889-8511-e9cb8e4b6220}</Project>
+      <Name>One.Core.Storage.One</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\One.Core.Storage\One.Core.Storage.csproj">
+      <Project>{9ca4a9c7-78f7-41a1-b75e-49e438cd64b9}</Project>
+      <Name>One.Core.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\One.Core\One.Core.csproj">
+      <Project>{1f42186d-ed75-4fda-9676-c9ae680a2ea6}</Project>
+      <Name>One.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\One.Model\One.Model.csproj">
       <Project>{345f4d61-67b1-4531-afd8-3a8a3bc9cf39}</Project>
       <Name>One.Model</Name>
