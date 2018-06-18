@@ -18,21 +18,9 @@ namespace One.Auth
             // Verificar token.
             // {code}
         }
-        public static void SetPin(string jwt, short pin)
-        {
-
-        }
-        public static void Refresh(string jwt)
-        {
-
-        }
-        public static void Verify(string jwt)
-        {
-
-        }
-        public static void LogOut(string jwt)
-        {
-
-        }
+        public static void SetPin(string jwt, short pin) { }
+        public static void Refresh(string jwt) { }
+        public static void Verify(string jwt) { }
+        public static void LogOut(string jwt) { }
     }
 }
