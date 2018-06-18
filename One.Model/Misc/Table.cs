@@ -14,9 +14,6 @@ namespace One.Model.Misc
         protected DateTime _CreationDate;
         protected DateTime _ModificationDate;
 
-        // Campos auxiliares
-        protected bool _IsCreationTime;
-
         // Propiedades de tabla
         [Column(Storage = "_Id", DbType = "NChar(24)", CanBeNull = false, IsPrimaryKey = true)]
         public string Id
@@ -34,11 +31,19 @@ namespace One.Model.Misc
             get => _ModificationDate;
         }
 
+        // Constructores
+        public Table()
+        {
+            _Id = LiteDB.ObjectId.NewObjectId().ToString();
+            _CreationDate = DateTime.Now;
+            _ModificationDate = DateTime.Now;
+        }
+
         // Metodos de manipulación de datos
-        protected void Modify(object value, out object field)
+        protected void Modify<T>(T value, out T field)
         {
             field = value;
-            if (!_IsCreationTime) _ModificationDate = DateTime.Now;
+            _ModificationDate = DateTime.Now;
         }
     }
 }

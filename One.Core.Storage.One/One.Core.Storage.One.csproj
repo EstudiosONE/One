@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E2C998B-B4C7-44AE-9253-7BA0F1C16493}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>One.Installer.DataBase.SQL</RootNamespace>
-    <AssemblyName>One.Installer.DataBase.SQL</AssemblyName>
+    <ProjectGuid>{4F988CD0-6952-4889-8511-E9CB8E4B6220}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>One.Core.Storage.One</RootNamespace>
+    <AssemblyName>One.Core.Storage.One</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,31 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Driver.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Driver.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Schema.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Driver.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Driver.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Driver.dbml.layout">
+      <DependentUpon>Driver.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\One.Core.Storage.One\One.Core.Storage.One.csproj">
-      <Project>{4f988cd0-6952-4889-8511-e9cb8e4b6220}</Project>
-      <Name>One.Core.Storage.One</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\One.Core.Storage\One.Core.Storage.csproj">
-      <Project>{9ca4a9c7-78f7-41a1-b75e-49e438cd64b9}</Project>
-      <Name>One.Core.Storage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\One.Core\One.Core.csproj">
-      <Project>{1f42186d-ed75-4fda-9676-c9ae680a2ea6}</Project>
-      <Name>One.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\One.Model\One.Model.csproj">
-      <Project>{345f4d61-67b1-4531-afd8-3a8a3bc9cf39}</Project>
-      <Name>One.Model</Name>
-    </ProjectReference>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

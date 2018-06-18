@@ -44,8 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth\Token.cs" />
     <Compile Include="Auth\User.cs" />
+    <Compile Include="Auth\UserSecret.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Core\Config.cs" />
+    <Compile Include="Core\Config\Server.cs" />
+    <Compile Include="Core\Config\Server\Connection.cs" />
+    <Compile Include="Core\Config\Server\Connection\Audit.cs" />
+    <Compile Include="Core\Config\Server\Connection\Paradise.cs" />
+    <Compile Include="Core\Config\Server\Connection\One.cs" />
+    <Compile Include="Core\Config\Server\Connection\One\ICredential.cs" />
+    <Compile Include="Core\Config\Server\Connection\One\Integrated.cs" />
+    <Compile Include="Core\Config\Server\Connection\One\Standard.cs" />
+    <Compile Include="Core\Config\Server\Connection\Paradise\ICredential.cs" />
+    <Compile Include="Core\Config\Server\Connection\Paradise\Integrated.cs" />
+    <Compile Include="Core\Config\Server\Connection\Paradise\Standard.cs" />
+    <Compile Include="Misc\ModelException.cs" />
+    <Compile Include="Misc\Table.cs" />
     <Compile Include="One.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Config\Server\Connection\Audit\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

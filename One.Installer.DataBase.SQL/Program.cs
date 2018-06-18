@@ -6,7 +6,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using One.Core;
 using One.Model;
 using Auth = One.Model.Auth;
 
@@ -14,55 +16,21 @@ namespace One.Installer.DataBase.SQL
 {
     class Program
     {
-        static readonly SQLDriver Driver;
+        internal static Model.Core Core = default(Model.Core);
 
-        static Program()
-        {
-            Driver = new SQLDriver();
-        }
         static void Main(string[] args)
         {
-            new DataBase(Driver).Initialize();
-            new Schema(Driver).CreateSchemaBase();
+            var initialize = new Initialize();
+            initialize.ProgressEvent += Initialize_ProgressEvent;
+            Core = initialize.StartAsync().GetAwaiter().GetResult();
+            Console.ReadKey();
+        }
 
-            string sentence = "";
-            var metaTable = Driver.Mapping.GetTable(typeof(Auth.User));
-            sentence += $"CREATE TABLE {metaTable.TableName} (";
-            for (int i = 0; i < metaTable.RowType.DataMembers.Count; i++)
-            {
-                var member = metaTable.RowType.DataMembers[i];
-                sentence += $" {member.Name} {member.DbType} {(member.CanBeNull ? "NULL" : "NOT NULL")}{((metaTable.RowType.DataMembers.Count - i) > 1? ", ": " ")}";
-            }
-            sentence += ") ON[PRIMARY]";
-            var PrimaryKeys = (from x in metaTable.RowType.DataMembers where x.IsPrimaryKey select x).ToList();
-            if (PrimaryKeys.Count > 0)
-            {
-                sentence += $" ALTER TABLE {metaTable.TableName} ADD CONSTRAINT PK_{metaTable.RowType.Name} PRIMARY KEY CLUSTERED (";
-                for (int i = 0; i < PrimaryKeys.Count; i++)
-                {
-                    sentence += $" {PrimaryKeys[i].Name}{((PrimaryKeys.Count - i) > 1 ? ", " : " ")}";
-                }
-                sentence += ") WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]";
-            }
-            try
-            {
-                Driver.ExecuteCommand(sentence);
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                switch (ex.Number)
-                {
-                    case 2714:
-
-                        break;
-                    default: break;
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-
+        private static void Initialize_ProgressEvent(object sender, Initialize.ProgressEventArgs e)
+        {
+            Console.Clear();
+            Console.WriteLine("INICIALIZANDO EL CORE DEL SISTEMA...");
+            Console.WriteLine($"Se completaron {e.CompletedTask} de {e.TotalTask} tareas.");
         }
     }
 }
