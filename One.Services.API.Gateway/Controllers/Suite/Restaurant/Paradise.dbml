@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paradise" Class="ParadiseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6A8R48U;Initial Catalog=Paradise;Integrated Security=True" SettingsObjectName="One.Services.API.Gateway.Properties.Settings" SettingsPropertyName="ParadiseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HABITACION" Member="HABITACION">
+    <Type Name="HABITACION">
+      <Column Name="HabNum" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HabNom" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="HabTipo" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="HabObs" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HabPiso" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HabCamMat" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HabCamSin" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HabCat" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="HabIntTel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HabTarifa" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="HabNoDisp" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HabNoDpNombre" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="HabEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HabLinea" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HabSector" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HabEnLimpiezaUsuId" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="HabEnLimpiezaFecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HabUltimaLimpiezaHora" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="HabEnLimpiezaHora" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="HabUltimaLimpiezaFecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HabEnLimpezaCtrlFrigobar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HabBloqueadaDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HabBloqueadaHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HabBloqueadaObs" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="HabProximaEntrada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HabProximaSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HabProximaReserva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HabProximaEntradaHora" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="HabOcupada" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PASAJEROS" Member="PASAJEROS">
+    <Type Name="PASAJEROS">
+      <Column Name="PaxCod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaxRazon" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="PaxDirFac" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="PaxTipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxNom" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PaxNom1" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PaxApe" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PaxApe1" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PaxFecNac" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaxSex" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PaxNac" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="PaxRuc" Type="System.Decimal" DbType="Decimal(15,0)" CanBeNull="true" />
+      <Column Name="PaxOcu" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="PaxCiv" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxDir" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="Paxdescu" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PaxDirLoc" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="PaxDirPais" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="PaxTel" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="PaxFax" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="PaxEmail" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="PaxCP" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PaxObs" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PaxTipDoc" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PaxNroDoc" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PaxEst" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="PaxEstPax" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxEveFec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CliBanId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CliBanSuc" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="CliBanCue" Type="System.Decimal" DbType="Decimal(15,0)" CanBeNull="true" />
+      <Column Name="CliBanTit" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="CliBanMonId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CliFecPag" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CliTopMN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CliTopME" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CliSalMN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CliSalME" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CliEntCtaPes" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CliEntCtaDol" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DepCod" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="PaxPlaCier" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="CliDsc" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="PaxProced" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PaxIngreso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaxEdades" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PaxUltEstadia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaxEsquina" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="PaxCodMan" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PaxPlaCtaCTra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDeDocumentoComprador" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResponsabilidadIvaComprador" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxControlTopeCredito" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxCanje" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxDepFac" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="PaxCiuFac" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="PaxLisId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PaxLey15921" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxNumApartamento" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PaxNumBis" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxTipoCasaDelivery" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PaxNumeroDePuerta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PaxEsquina2" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="PaxBarId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ConVenId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Pax0ExportacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RESERVA" Member="RESERVA">
+    <Type Name="RESERVA">
+      <Column Name="ResNro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ResUsuIng" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ResHab" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResFecIng" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResHorIng" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResMaqIng" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ResUsuMod" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ResPaxTit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResMaqMod" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ResFecMod" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResHorMod" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResUsuCan" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ResFecCan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResHorCan" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResMaqCan" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ResQuien" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="ResSerObs" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResPago" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResTel" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="ResFax" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="ResResPor" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ResFecEnt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResFecSal" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResEsta" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResProced" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="RHConLin" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResPlan" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="ResConSen" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResConfirm" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResFecConf" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResHorConf" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResMotCan" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="ResPorDto" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DescId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResEmpPaga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResDestino" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="ResConRoo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResTarifCar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResMonFact" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResCamMat" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResCamSin" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResCamCun" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResHoraEntrada" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResGruId" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="AgeViaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResCambioDatAgencia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResPagaHospedaje" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResFecEntHor" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResMucLinObs" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResMail" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="ResHabiaSenia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResHisHabNumAnt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResHisTarIdAnt" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="ResHisTarMonIdAnt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResHisTarImporteAnt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ResConfPorMail" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResEMailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResDesAplicableA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResCantPax" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TipOcuId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResFichaDeIngreso" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResMotivoAlojamiento" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="ResLateCheckOut" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResDesayunos" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ResVoucherAgencia" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ResCanFacIdNoShow" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResCanNoShow" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResSeniaUtilizada" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ResAutoMatricula" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ResAutoColor" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="ResAutoModelo" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="ResAutoMarca" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="ResFechaConfirmacionMovible" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ResFechaConfirmacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResMaqVer" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ResUsuVer" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ResHorVer" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ResFecVer" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResVerificada" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GASTOS" Member="GASTOS">
+    <Type Name="GASTOS">
+      <Column Name="GtoTranId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GtoCabPtoVta" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="GtoCabFecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoCabVenId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabHabNum" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabMonId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabLisId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabReserva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabPaxTit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabDesId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabUsu" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GtoCabEstId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabHoraApertura" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoCabHoraCierre" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoCabEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCabTotSImpuesto" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoCabTotGeneral" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoCabConLin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabMesaNro" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCajaId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCierreNro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCierreFec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoCabFecCan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoCabHorCan" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoCabUsuCan" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GtoCabMotCan" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="GtoCabCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabImpuesto" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoCantCubiertos" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabUsMod" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GtoCabFeMod" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoCabHoMod" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoCabCompr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabTraFac" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCodigoReparto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RepId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoRepartoFinalizado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCabTelefono" Type="System.Decimal" DbType="Decimal(15,0)" CanBeNull="true" />
+      <Column Name="GtoCobCubiertos" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCobConsumoMinimo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCobEntrega" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HabLis" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HabPrecio" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HabDescuento" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCabSitConId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCantComensales" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoCabCubiertoAutomatico" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCabDeliveryPagaCon" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoCabDeliveryVuelto" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoCabTurno" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoAnulacionMotivo" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="GtoAnulacionUsuId" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GtoCabCierreTesoreriaAnula" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabCierreAnula" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCierreMensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCierreTesoreria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoCabCliSucurLey15921" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCabCliSucurId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Gas0ExportacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MESAPTOVTA" Member="MESAPTOVTA">
+    <Type Name="MESAPTOVTA">
+      <Column Name="MesaPtoId" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MesaId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MesaUbica" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaCubiertos" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaDsc" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="MesaEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MesaVenId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenAtiende" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaTranId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MesaCoorX" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaCoorY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaPlano" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenIdT1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenIdT2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenIdT3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenIdT4" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenIdT5" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaVenIdT6" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MesaTipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MesaJuntar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 17" name="Paradise">
+  <DataContextMoniker Name="/ParadiseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1324e4b6-8c4d-4357-95c4-1365fdf5164c" absoluteBounds="0.75, 0.75, 2, 6.3861311848958318">
+      <DataClassMoniker Name="/ParadiseDataContext/HABITACION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf6cd371-428e-4ebe-aeb0-5c58c102fa76" absoluteBounds="0.76500000000000012, 1.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b562b83-0dfb-445a-bd0b-d094b84277fb" absoluteBounds="3.75, 0.75, 2, 13.693585611979167">
+      <DataClassMoniker Name="/ParadiseDataContext/PASAJEROS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42df8612-2491-4a2f-a8fa-6f8c8dfe66c7" absoluteBounds="3.765, 1.21, 1.9700000000000002, 13.133585611979166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62d81cdd-4b86-49bf-9060-791e90f1169e" absoluteBounds="6.75, 0.75, 2, 16.001202799479159">
+      <DataClassMoniker Name="/ParadiseDataContext/RESERVA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a4ac567-2740-48a7-9b74-cbe11e863d4c" absoluteBounds="6.765, 1.2100000000000009, 1.9700000000000002, 15.441202799479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f1af06d-e7af-405e-a3ed-bfec7ab51ac2" absoluteBounds="9.75, 0.75, 2, 12.155174153645831">
+      <DataClassMoniker Name="/ParadiseDataContext/GASTOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07c525b6-da54-4904-b729-58560132893c" absoluteBounds="9.765, 1.21, 1.9700000000000002, 11.595174153645832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="896ad79b-a9a5-4fb9-8bde-c8c35129bd2d" absoluteBounds="12.75, 0.75, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/ParadiseDataContext/MESAPTOVTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcaea899-e4f0-449e-8d37-0c763efe66d2" absoluteBounds="12.765, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
