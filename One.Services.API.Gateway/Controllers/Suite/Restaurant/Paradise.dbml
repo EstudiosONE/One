@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paradise" Class="ParadiseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6A8R48U;Initial Catalog=Paradise;Integrated Security=True" SettingsObjectName="One.Services.API.Gateway.Properties.Settings" SettingsPropertyName="ParadiseConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=Paradise;Persist Security Info=True;User ID=One" SettingsObjectName="One.Services.API.Gateway.Properties.Settings" SettingsPropertyName="ParadiseConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.HABITACION" Member="HABITACION">
     <Type Name="HABITACION">
       <Column Name="HabNum" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -272,6 +272,152 @@
       <Column Name="MesaVenIdT6" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="MesaTipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Column Name="MesaJuntar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GASTOS1" Member="GASTOS1">
+    <Type Name="GASTOS1">
+      <Column Name="GtoTranId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GtoLinId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GtoLinObsComis" Type="System.String" DbType="Char(150)" CanBeNull="true" />
+      <Column Name="GtoLinCmdPantalla" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinCmdFechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoLinCmdHoraFin" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoLinLlamada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinSilla" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinCosto" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoLinCostoMonId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoEstCmd" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinArtId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinLista" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinPrecUnitario" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoLinCantidad" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="GtoLinDesId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinImpDto" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoLinImpTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoLinTotSImp" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoLinMonId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinPtoVta" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="GtoLinFecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoLinHora" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoLinReserva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinHabNum" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinPaxTit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinPaxPaga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinVendedor" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinComision" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GtoLinFactura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinMesaNro" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinCmdId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinComentario" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoCocContador" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinCmdImp" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinCantCubiertos" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinCmdEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinCmdFechaLlegada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoLinCmdHoraLlegada" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoLinCmdFechaLiberada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GtoLinCmdHoraLiberada" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoLinCmdLinea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GtoLinGruId" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="GtoLinObsDescuento" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="GtoLinEliminaSupervicion" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinBorro" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GtoLinEstConsumo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinCmdLugar" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GtoLinSexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Gas1ExportacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARTICULOS" Member="ARTICULOS">
+    <Type Name="ARTICULOS">
+      <Column Name="ArtId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArtDsc" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="ArtDscAbr" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="ProId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArtDesEnv" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtStkMin" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtPreba" Type="System.Decimal" DbType="Decimal(11,4)" CanBeNull="true" />
+      <Column Name="MonId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ArtCant" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtCom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtUltCom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArtUltVen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArtCanVen" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtCanDev" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtTotVen" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtFrac" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtForVen" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtForCom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtBulto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArtEnvCod" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ArtEstado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtMerca" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtStkSuc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtStkTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtPerDto" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtManStk" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="UniId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CmdId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RubId" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="ArtDto1" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtDto2" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtDto3" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtObsFor" Type="System.String" DbType="Char(200)" CanBeNull="true" />
+      <Column Name="ArtFormula" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtSitConId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ArtCubierto" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtBotonTs" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="ArtPlanCtaMerCompaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArtPlanCtaVentaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RubIdCompra" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="ArtXMoneda" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ArtXLista" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ArtXPrecio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtImpuestoInterno" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtMonIdFormula" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ArtSucId1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId3" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId4" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId5" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId6" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId7" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId8" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId9" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSucId0" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtSuperArticulo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtTamanio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtComplementoArticulo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtImpConInv" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArtCodBarra" Type="System.String" DbType="Char(18)" CanBeNull="true" />
+      <Column Name="ArtXPuntoDeVentaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ArtManStkFinFor" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LISPRE" Member="LISPRE">
+    <Type Name="LISPRE">
+      <Column Name="LisId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LisDsc" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+      <Column Name="LisPor" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="LisCom" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="LisIvaInc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="LisPie" Type="System.String" DbType="Char(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRECIOS" Member="PRECIOS">
+    <Type Name="PRECIOS">
+      <Column Name="ArtId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LisId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PreMonId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Artpreant" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ArtPre" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Artfec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArtPor" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtPorAnt" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="ArtVen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArtPreAbierto" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

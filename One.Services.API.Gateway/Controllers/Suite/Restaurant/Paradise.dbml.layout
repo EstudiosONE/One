@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 17" name="Paradise">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 18" name="Paradise">
   <DataContextMoniker Name="/ParadiseDataContext" />
   <nestedChildShapes>
     <classShape Id="1324e4b6-8c4d-4357-95c4-1365fdf5164c" absoluteBounds="0.75, 0.75, 2, 6.3861311848958318">
@@ -30,6 +30,30 @@
       <DataClassMoniker Name="/ParadiseDataContext/MESAPTOVTA" />
       <nestedChildShapes>
         <elementListCompartment Id="fcaea899-e4f0-449e-8d37-0c763efe66d2" absoluteBounds="12.765, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03154015-7946-4e2c-8f02-41822821934a" absoluteBounds="12.75, 6.75, 2, 10.809064127604167">
+      <DataClassMoniker Name="/ParadiseDataContext/GASTOS1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="937528c2-77b7-4a81-a446-53c932487308" absoluteBounds="12.765, 7.2100000000000009, 1.9700000000000002, 10.249064127604166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2559de33-4818-415a-9741-e40e5179ba53" absoluteBounds="15.75, 0.75, 2, 12.732078450520833">
+      <DataClassMoniker Name="/ParadiseDataContext/ARTICULOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5dd90c8-6f92-48e0-86e7-eddb1519ec6c" absoluteBounds="15.765, 1.21, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24c1f5ac-6358-429d-b053-dec141ccf808" absoluteBounds="0.75, 15.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/ParadiseDataContext/LISPRE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23f6e211-6026-4dbf-a270-649f555bab6d" absoluteBounds="0.76500000000000057, 16.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ceca04a9-424b-45a4-9c37-ca5e865259b6" absoluteBounds="15.75, 14.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ParadiseDataContext/PRECIOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6914dc14-f8d6-451c-aa0f-9f554d807701" absoluteBounds="15.765, 15.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -26,7 +26,8 @@ namespace One.Services.API.Gateway.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6A8R48U;Initial Catalog=Secundario;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=Secundario;Persist Security Info=True;User " +
+            "ID=One;Password=RimiSol.2141")]
         public string SecundarioConnectionString {
             get {
                 return ((string)(this["SecundarioConnectionString"]));
@@ -36,21 +37,11 @@ namespace One.Services.API.Gateway.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6A8R48U;Initial Catalog=Paradise;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=server01;Initial Catalog=Paradise;Persist Security Info=True;User ID=" +
+            "One;Password=RimiSol.2141")]
         public string ParadiseConnectionString {
             get {
                 return ((string)(this["ParadiseConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=server01;Initial Catalog=Paradise;Persist Security Info=True;User ID=" +
-            "One;Password=RimiSol.2141")]
-        public string ParadiseConnectionString1 {
-            get {
-                return ((string)(this["ParadiseConnectionString1"]));
             }
         }
     }

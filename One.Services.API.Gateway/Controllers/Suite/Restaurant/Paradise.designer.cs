@@ -45,6 +45,18 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
     partial void InsertMESAPTOVTA(MESAPTOVTA instance);
     partial void UpdateMESAPTOVTA(MESAPTOVTA instance);
     partial void DeleteMESAPTOVTA(MESAPTOVTA instance);
+    partial void InsertGASTOS1(GASTOS1 instance);
+    partial void UpdateGASTOS1(GASTOS1 instance);
+    partial void DeleteGASTOS1(GASTOS1 instance);
+    partial void InsertARTICULOS(ARTICULOS instance);
+    partial void UpdateARTICULOS(ARTICULOS instance);
+    partial void DeleteARTICULOS(ARTICULOS instance);
+    partial void InsertLISPRE(LISPRE instance);
+    partial void UpdateLISPRE(LISPRE instance);
+    partial void DeleteLISPRE(LISPRE instance);
+    partial void InsertPRECIOS(PRECIOS instance);
+    partial void UpdatePRECIOS(PRECIOS instance);
+    partial void DeletePRECIOS(PRECIOS instance);
     #endregion
 		
 		public ParadiseDataContext() : 
@@ -114,6 +126,38 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			get
 			{
 				return this.GetTable<MESAPTOVTA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GASTOS1> GASTOS1
+		{
+			get
+			{
+				return this.GetTable<GASTOS1>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ARTICULOS> ARTICULOS
+		{
+			get
+			{
+				return this.GetTable<ARTICULOS>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LISPRE> LISPRE
+		{
+			get
+			{
+				return this.GetTable<LISPRE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PRECIOS> PRECIOS
+		{
+			get
+			{
+				return this.GetTable<PRECIOS>();
 			}
 		}
 	}
@@ -6379,6 +6423,3278 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 					this._MesaJuntar = value;
 					this.SendPropertyChanged("MesaJuntar");
 					this.OnMesaJuntarChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GASTOS1")]
+	public partial class GASTOS1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _GtoTranId;
+		
+		private int _GtoLinId;
+		
+		private string _GtoLinObsComis;
+		
+		private System.Nullable<char> _GtoLinCmdPantalla;
+		
+		private System.Nullable<System.DateTime> _GtoLinCmdFechaFin;
+		
+		private string _GtoLinCmdHoraFin;
+		
+		private System.Nullable<int> _GtoLinLlamada;
+		
+		private System.Nullable<short> _GtoLinSilla;
+		
+		private System.Nullable<decimal> _GtoLinCosto;
+		
+		private System.Nullable<short> _GtoLinCostoMonId;
+		
+		private System.Nullable<char> _GtoEstCmd;
+		
+		private System.Nullable<int> _GtoLinArtId;
+		
+		private System.Nullable<short> _GtoLinLista;
+		
+		private System.Nullable<decimal> _GtoLinPrecUnitario;
+		
+		private System.Nullable<decimal> _GtoLinCantidad;
+		
+		private System.Nullable<short> _GtoLinDesId;
+		
+		private System.Nullable<decimal> _GtoLinImpDto;
+		
+		private System.Nullable<decimal> _GtoLinImpTotal;
+		
+		private System.Nullable<decimal> _GtoLinTotSImp;
+		
+		private System.Nullable<short> _GtoLinMonId;
+		
+		private string _GtoLinPtoVta;
+		
+		private System.Nullable<System.DateTime> _GtoLinFecha;
+		
+		private string _GtoLinHora;
+		
+		private System.Nullable<int> _GtoLinReserva;
+		
+		private System.Nullable<short> _GtoLinHabNum;
+		
+		private System.Nullable<int> _GtoLinPaxTit;
+		
+		private System.Nullable<int> _GtoLinPaxPaga;
+		
+		private System.Nullable<short> _GtoLinVendedor;
+		
+		private System.Nullable<decimal> _GtoLinComision;
+		
+		private System.Nullable<int> _GtoLinFactura;
+		
+		private System.Nullable<char> _GtoLinEstado;
+		
+		private System.Nullable<short> _GtoLinMesaNro;
+		
+		private System.Nullable<int> _GtoLinCierre;
+		
+		private System.Nullable<short> _GtoLinCmdId;
+		
+		private System.Nullable<char> _GtoLinComentario;
+		
+		private System.Nullable<short> _GtoCocContador;
+		
+		private System.Nullable<char> _GtoLinCmdImp;
+		
+		private System.Nullable<short> _GtoLinCantCubiertos;
+		
+		private System.Nullable<char> _GtoLinCmdEstado;
+		
+		private System.Nullable<System.DateTime> _GtoLinCmdFechaLlegada;
+		
+		private string _GtoLinCmdHoraLlegada;
+		
+		private System.Nullable<System.DateTime> _GtoLinCmdFechaLiberada;
+		
+		private string _GtoLinCmdHoraLiberada;
+		
+		private System.Nullable<int> _GtoLinCmdLinea;
+		
+		private string _GtoLinGruId;
+		
+		private string _GtoLinObsDescuento;
+		
+		private System.Nullable<char> _GtoLinEliminaSupervicion;
+		
+		private System.Nullable<char> _GtoLinBorro;
+		
+		private System.Nullable<short> _GtoLinEstConsumo;
+		
+		private System.Nullable<short> _GtoLinCmdLugar;
+		
+		private System.Nullable<char> _GtoLinSexo;
+		
+		private System.Nullable<int> _Gas1ExportacionId;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnGtoTranIdChanging(int value);
+    partial void OnGtoTranIdChanged();
+    partial void OnGtoLinIdChanging(int value);
+    partial void OnGtoLinIdChanged();
+    partial void OnGtoLinObsComisChanging(string value);
+    partial void OnGtoLinObsComisChanged();
+    partial void OnGtoLinCmdPantallaChanging(System.Nullable<char> value);
+    partial void OnGtoLinCmdPantallaChanged();
+    partial void OnGtoLinCmdFechaFinChanging(System.Nullable<System.DateTime> value);
+    partial void OnGtoLinCmdFechaFinChanged();
+    partial void OnGtoLinCmdHoraFinChanging(string value);
+    partial void OnGtoLinCmdHoraFinChanged();
+    partial void OnGtoLinLlamadaChanging(System.Nullable<int> value);
+    partial void OnGtoLinLlamadaChanged();
+    partial void OnGtoLinSillaChanging(System.Nullable<short> value);
+    partial void OnGtoLinSillaChanged();
+    partial void OnGtoLinCostoChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinCostoChanged();
+    partial void OnGtoLinCostoMonIdChanging(System.Nullable<short> value);
+    partial void OnGtoLinCostoMonIdChanged();
+    partial void OnGtoEstCmdChanging(System.Nullable<char> value);
+    partial void OnGtoEstCmdChanged();
+    partial void OnGtoLinArtIdChanging(System.Nullable<int> value);
+    partial void OnGtoLinArtIdChanged();
+    partial void OnGtoLinListaChanging(System.Nullable<short> value);
+    partial void OnGtoLinListaChanged();
+    partial void OnGtoLinPrecUnitarioChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinPrecUnitarioChanged();
+    partial void OnGtoLinCantidadChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinCantidadChanged();
+    partial void OnGtoLinDesIdChanging(System.Nullable<short> value);
+    partial void OnGtoLinDesIdChanged();
+    partial void OnGtoLinImpDtoChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinImpDtoChanged();
+    partial void OnGtoLinImpTotalChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinImpTotalChanged();
+    partial void OnGtoLinTotSImpChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinTotSImpChanged();
+    partial void OnGtoLinMonIdChanging(System.Nullable<short> value);
+    partial void OnGtoLinMonIdChanged();
+    partial void OnGtoLinPtoVtaChanging(string value);
+    partial void OnGtoLinPtoVtaChanged();
+    partial void OnGtoLinFechaChanging(System.Nullable<System.DateTime> value);
+    partial void OnGtoLinFechaChanged();
+    partial void OnGtoLinHoraChanging(string value);
+    partial void OnGtoLinHoraChanged();
+    partial void OnGtoLinReservaChanging(System.Nullable<int> value);
+    partial void OnGtoLinReservaChanged();
+    partial void OnGtoLinHabNumChanging(System.Nullable<short> value);
+    partial void OnGtoLinHabNumChanged();
+    partial void OnGtoLinPaxTitChanging(System.Nullable<int> value);
+    partial void OnGtoLinPaxTitChanged();
+    partial void OnGtoLinPaxPagaChanging(System.Nullable<int> value);
+    partial void OnGtoLinPaxPagaChanged();
+    partial void OnGtoLinVendedorChanging(System.Nullable<short> value);
+    partial void OnGtoLinVendedorChanged();
+    partial void OnGtoLinComisionChanging(System.Nullable<decimal> value);
+    partial void OnGtoLinComisionChanged();
+    partial void OnGtoLinFacturaChanging(System.Nullable<int> value);
+    partial void OnGtoLinFacturaChanged();
+    partial void OnGtoLinEstadoChanging(System.Nullable<char> value);
+    partial void OnGtoLinEstadoChanged();
+    partial void OnGtoLinMesaNroChanging(System.Nullable<short> value);
+    partial void OnGtoLinMesaNroChanged();
+    partial void OnGtoLinCierreChanging(System.Nullable<int> value);
+    partial void OnGtoLinCierreChanged();
+    partial void OnGtoLinCmdIdChanging(System.Nullable<short> value);
+    partial void OnGtoLinCmdIdChanged();
+    partial void OnGtoLinComentarioChanging(System.Nullable<char> value);
+    partial void OnGtoLinComentarioChanged();
+    partial void OnGtoCocContadorChanging(System.Nullable<short> value);
+    partial void OnGtoCocContadorChanged();
+    partial void OnGtoLinCmdImpChanging(System.Nullable<char> value);
+    partial void OnGtoLinCmdImpChanged();
+    partial void OnGtoLinCantCubiertosChanging(System.Nullable<short> value);
+    partial void OnGtoLinCantCubiertosChanged();
+    partial void OnGtoLinCmdEstadoChanging(System.Nullable<char> value);
+    partial void OnGtoLinCmdEstadoChanged();
+    partial void OnGtoLinCmdFechaLlegadaChanging(System.Nullable<System.DateTime> value);
+    partial void OnGtoLinCmdFechaLlegadaChanged();
+    partial void OnGtoLinCmdHoraLlegadaChanging(string value);
+    partial void OnGtoLinCmdHoraLlegadaChanged();
+    partial void OnGtoLinCmdFechaLiberadaChanging(System.Nullable<System.DateTime> value);
+    partial void OnGtoLinCmdFechaLiberadaChanged();
+    partial void OnGtoLinCmdHoraLiberadaChanging(string value);
+    partial void OnGtoLinCmdHoraLiberadaChanged();
+    partial void OnGtoLinCmdLineaChanging(System.Nullable<int> value);
+    partial void OnGtoLinCmdLineaChanged();
+    partial void OnGtoLinGruIdChanging(string value);
+    partial void OnGtoLinGruIdChanged();
+    partial void OnGtoLinObsDescuentoChanging(string value);
+    partial void OnGtoLinObsDescuentoChanged();
+    partial void OnGtoLinEliminaSupervicionChanging(System.Nullable<char> value);
+    partial void OnGtoLinEliminaSupervicionChanged();
+    partial void OnGtoLinBorroChanging(System.Nullable<char> value);
+    partial void OnGtoLinBorroChanged();
+    partial void OnGtoLinEstConsumoChanging(System.Nullable<short> value);
+    partial void OnGtoLinEstConsumoChanged();
+    partial void OnGtoLinCmdLugarChanging(System.Nullable<short> value);
+    partial void OnGtoLinCmdLugarChanged();
+    partial void OnGtoLinSexoChanging(System.Nullable<char> value);
+    partial void OnGtoLinSexoChanged();
+    partial void OnGas1ExportacionIdChanging(System.Nullable<int> value);
+    partial void OnGas1ExportacionIdChanged();
+    #endregion
+		
+		public GASTOS1()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoTranId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int GtoTranId
+		{
+			get
+			{
+				return this._GtoTranId;
+			}
+			set
+			{
+				if ((this._GtoTranId != value))
+				{
+					this.OnGtoTranIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoTranId = value;
+					this.SendPropertyChanged("GtoTranId");
+					this.OnGtoTranIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int GtoLinId
+		{
+			get
+			{
+				return this._GtoLinId;
+			}
+			set
+			{
+				if ((this._GtoLinId != value))
+				{
+					this.OnGtoLinIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinId = value;
+					this.SendPropertyChanged("GtoLinId");
+					this.OnGtoLinIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinObsComis", DbType="Char(150)")]
+		public string GtoLinObsComis
+		{
+			get
+			{
+				return this._GtoLinObsComis;
+			}
+			set
+			{
+				if ((this._GtoLinObsComis != value))
+				{
+					this.OnGtoLinObsComisChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinObsComis = value;
+					this.SendPropertyChanged("GtoLinObsComis");
+					this.OnGtoLinObsComisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdPantalla", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinCmdPantalla
+		{
+			get
+			{
+				return this._GtoLinCmdPantalla;
+			}
+			set
+			{
+				if ((this._GtoLinCmdPantalla != value))
+				{
+					this.OnGtoLinCmdPantallaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdPantalla = value;
+					this.SendPropertyChanged("GtoLinCmdPantalla");
+					this.OnGtoLinCmdPantallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdFechaFin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> GtoLinCmdFechaFin
+		{
+			get
+			{
+				return this._GtoLinCmdFechaFin;
+			}
+			set
+			{
+				if ((this._GtoLinCmdFechaFin != value))
+				{
+					this.OnGtoLinCmdFechaFinChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdFechaFin = value;
+					this.SendPropertyChanged("GtoLinCmdFechaFin");
+					this.OnGtoLinCmdFechaFinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdHoraFin", DbType="Char(8)")]
+		public string GtoLinCmdHoraFin
+		{
+			get
+			{
+				return this._GtoLinCmdHoraFin;
+			}
+			set
+			{
+				if ((this._GtoLinCmdHoraFin != value))
+				{
+					this.OnGtoLinCmdHoraFinChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdHoraFin = value;
+					this.SendPropertyChanged("GtoLinCmdHoraFin");
+					this.OnGtoLinCmdHoraFinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinLlamada", DbType="Int")]
+		public System.Nullable<int> GtoLinLlamada
+		{
+			get
+			{
+				return this._GtoLinLlamada;
+			}
+			set
+			{
+				if ((this._GtoLinLlamada != value))
+				{
+					this.OnGtoLinLlamadaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinLlamada = value;
+					this.SendPropertyChanged("GtoLinLlamada");
+					this.OnGtoLinLlamadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinSilla", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinSilla
+		{
+			get
+			{
+				return this._GtoLinSilla;
+			}
+			set
+			{
+				if ((this._GtoLinSilla != value))
+				{
+					this.OnGtoLinSillaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinSilla = value;
+					this.SendPropertyChanged("GtoLinSilla");
+					this.OnGtoLinSillaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCosto", DbType="Money")]
+		public System.Nullable<decimal> GtoLinCosto
+		{
+			get
+			{
+				return this._GtoLinCosto;
+			}
+			set
+			{
+				if ((this._GtoLinCosto != value))
+				{
+					this.OnGtoLinCostoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCosto = value;
+					this.SendPropertyChanged("GtoLinCosto");
+					this.OnGtoLinCostoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCostoMonId", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinCostoMonId
+		{
+			get
+			{
+				return this._GtoLinCostoMonId;
+			}
+			set
+			{
+				if ((this._GtoLinCostoMonId != value))
+				{
+					this.OnGtoLinCostoMonIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCostoMonId = value;
+					this.SendPropertyChanged("GtoLinCostoMonId");
+					this.OnGtoLinCostoMonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoEstCmd", DbType="Char(1)")]
+		public System.Nullable<char> GtoEstCmd
+		{
+			get
+			{
+				return this._GtoEstCmd;
+			}
+			set
+			{
+				if ((this._GtoEstCmd != value))
+				{
+					this.OnGtoEstCmdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoEstCmd = value;
+					this.SendPropertyChanged("GtoEstCmd");
+					this.OnGtoEstCmdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinArtId", DbType="Int")]
+		public System.Nullable<int> GtoLinArtId
+		{
+			get
+			{
+				return this._GtoLinArtId;
+			}
+			set
+			{
+				if ((this._GtoLinArtId != value))
+				{
+					this.OnGtoLinArtIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinArtId = value;
+					this.SendPropertyChanged("GtoLinArtId");
+					this.OnGtoLinArtIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinLista", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinLista
+		{
+			get
+			{
+				return this._GtoLinLista;
+			}
+			set
+			{
+				if ((this._GtoLinLista != value))
+				{
+					this.OnGtoLinListaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinLista = value;
+					this.SendPropertyChanged("GtoLinLista");
+					this.OnGtoLinListaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinPrecUnitario", DbType="Money")]
+		public System.Nullable<decimal> GtoLinPrecUnitario
+		{
+			get
+			{
+				return this._GtoLinPrecUnitario;
+			}
+			set
+			{
+				if ((this._GtoLinPrecUnitario != value))
+				{
+					this.OnGtoLinPrecUnitarioChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinPrecUnitario = value;
+					this.SendPropertyChanged("GtoLinPrecUnitario");
+					this.OnGtoLinPrecUnitarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCantidad", DbType="SmallMoney")]
+		public System.Nullable<decimal> GtoLinCantidad
+		{
+			get
+			{
+				return this._GtoLinCantidad;
+			}
+			set
+			{
+				if ((this._GtoLinCantidad != value))
+				{
+					this.OnGtoLinCantidadChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCantidad = value;
+					this.SendPropertyChanged("GtoLinCantidad");
+					this.OnGtoLinCantidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinDesId", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinDesId
+		{
+			get
+			{
+				return this._GtoLinDesId;
+			}
+			set
+			{
+				if ((this._GtoLinDesId != value))
+				{
+					this.OnGtoLinDesIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinDesId = value;
+					this.SendPropertyChanged("GtoLinDesId");
+					this.OnGtoLinDesIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinImpDto", DbType="Money")]
+		public System.Nullable<decimal> GtoLinImpDto
+		{
+			get
+			{
+				return this._GtoLinImpDto;
+			}
+			set
+			{
+				if ((this._GtoLinImpDto != value))
+				{
+					this.OnGtoLinImpDtoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinImpDto = value;
+					this.SendPropertyChanged("GtoLinImpDto");
+					this.OnGtoLinImpDtoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinImpTotal", DbType="Money")]
+		public System.Nullable<decimal> GtoLinImpTotal
+		{
+			get
+			{
+				return this._GtoLinImpTotal;
+			}
+			set
+			{
+				if ((this._GtoLinImpTotal != value))
+				{
+					this.OnGtoLinImpTotalChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinImpTotal = value;
+					this.SendPropertyChanged("GtoLinImpTotal");
+					this.OnGtoLinImpTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinTotSImp", DbType="Money")]
+		public System.Nullable<decimal> GtoLinTotSImp
+		{
+			get
+			{
+				return this._GtoLinTotSImp;
+			}
+			set
+			{
+				if ((this._GtoLinTotSImp != value))
+				{
+					this.OnGtoLinTotSImpChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinTotSImp = value;
+					this.SendPropertyChanged("GtoLinTotSImp");
+					this.OnGtoLinTotSImpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinMonId", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinMonId
+		{
+			get
+			{
+				return this._GtoLinMonId;
+			}
+			set
+			{
+				if ((this._GtoLinMonId != value))
+				{
+					this.OnGtoLinMonIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinMonId = value;
+					this.SendPropertyChanged("GtoLinMonId");
+					this.OnGtoLinMonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinPtoVta", DbType="Char(3)")]
+		public string GtoLinPtoVta
+		{
+			get
+			{
+				return this._GtoLinPtoVta;
+			}
+			set
+			{
+				if ((this._GtoLinPtoVta != value))
+				{
+					this.OnGtoLinPtoVtaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinPtoVta = value;
+					this.SendPropertyChanged("GtoLinPtoVta");
+					this.OnGtoLinPtoVtaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinFecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> GtoLinFecha
+		{
+			get
+			{
+				return this._GtoLinFecha;
+			}
+			set
+			{
+				if ((this._GtoLinFecha != value))
+				{
+					this.OnGtoLinFechaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinFecha = value;
+					this.SendPropertyChanged("GtoLinFecha");
+					this.OnGtoLinFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinHora", DbType="Char(8)")]
+		public string GtoLinHora
+		{
+			get
+			{
+				return this._GtoLinHora;
+			}
+			set
+			{
+				if ((this._GtoLinHora != value))
+				{
+					this.OnGtoLinHoraChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinHora = value;
+					this.SendPropertyChanged("GtoLinHora");
+					this.OnGtoLinHoraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinReserva", DbType="Int")]
+		public System.Nullable<int> GtoLinReserva
+		{
+			get
+			{
+				return this._GtoLinReserva;
+			}
+			set
+			{
+				if ((this._GtoLinReserva != value))
+				{
+					this.OnGtoLinReservaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinReserva = value;
+					this.SendPropertyChanged("GtoLinReserva");
+					this.OnGtoLinReservaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinHabNum", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinHabNum
+		{
+			get
+			{
+				return this._GtoLinHabNum;
+			}
+			set
+			{
+				if ((this._GtoLinHabNum != value))
+				{
+					this.OnGtoLinHabNumChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinHabNum = value;
+					this.SendPropertyChanged("GtoLinHabNum");
+					this.OnGtoLinHabNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinPaxTit", DbType="Int")]
+		public System.Nullable<int> GtoLinPaxTit
+		{
+			get
+			{
+				return this._GtoLinPaxTit;
+			}
+			set
+			{
+				if ((this._GtoLinPaxTit != value))
+				{
+					this.OnGtoLinPaxTitChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinPaxTit = value;
+					this.SendPropertyChanged("GtoLinPaxTit");
+					this.OnGtoLinPaxTitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinPaxPaga", DbType="Int")]
+		public System.Nullable<int> GtoLinPaxPaga
+		{
+			get
+			{
+				return this._GtoLinPaxPaga;
+			}
+			set
+			{
+				if ((this._GtoLinPaxPaga != value))
+				{
+					this.OnGtoLinPaxPagaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinPaxPaga = value;
+					this.SendPropertyChanged("GtoLinPaxPaga");
+					this.OnGtoLinPaxPagaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinVendedor", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinVendedor
+		{
+			get
+			{
+				return this._GtoLinVendedor;
+			}
+			set
+			{
+				if ((this._GtoLinVendedor != value))
+				{
+					this.OnGtoLinVendedorChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinVendedor = value;
+					this.SendPropertyChanged("GtoLinVendedor");
+					this.OnGtoLinVendedorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinComision", DbType="Money")]
+		public System.Nullable<decimal> GtoLinComision
+		{
+			get
+			{
+				return this._GtoLinComision;
+			}
+			set
+			{
+				if ((this._GtoLinComision != value))
+				{
+					this.OnGtoLinComisionChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinComision = value;
+					this.SendPropertyChanged("GtoLinComision");
+					this.OnGtoLinComisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinFactura", DbType="Int")]
+		public System.Nullable<int> GtoLinFactura
+		{
+			get
+			{
+				return this._GtoLinFactura;
+			}
+			set
+			{
+				if ((this._GtoLinFactura != value))
+				{
+					this.OnGtoLinFacturaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinFactura = value;
+					this.SendPropertyChanged("GtoLinFactura");
+					this.OnGtoLinFacturaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinEstado", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinEstado
+		{
+			get
+			{
+				return this._GtoLinEstado;
+			}
+			set
+			{
+				if ((this._GtoLinEstado != value))
+				{
+					this.OnGtoLinEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinEstado = value;
+					this.SendPropertyChanged("GtoLinEstado");
+					this.OnGtoLinEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinMesaNro", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinMesaNro
+		{
+			get
+			{
+				return this._GtoLinMesaNro;
+			}
+			set
+			{
+				if ((this._GtoLinMesaNro != value))
+				{
+					this.OnGtoLinMesaNroChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinMesaNro = value;
+					this.SendPropertyChanged("GtoLinMesaNro");
+					this.OnGtoLinMesaNroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCierre", DbType="Int")]
+		public System.Nullable<int> GtoLinCierre
+		{
+			get
+			{
+				return this._GtoLinCierre;
+			}
+			set
+			{
+				if ((this._GtoLinCierre != value))
+				{
+					this.OnGtoLinCierreChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCierre = value;
+					this.SendPropertyChanged("GtoLinCierre");
+					this.OnGtoLinCierreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdId", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinCmdId
+		{
+			get
+			{
+				return this._GtoLinCmdId;
+			}
+			set
+			{
+				if ((this._GtoLinCmdId != value))
+				{
+					this.OnGtoLinCmdIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdId = value;
+					this.SendPropertyChanged("GtoLinCmdId");
+					this.OnGtoLinCmdIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinComentario", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinComentario
+		{
+			get
+			{
+				return this._GtoLinComentario;
+			}
+			set
+			{
+				if ((this._GtoLinComentario != value))
+				{
+					this.OnGtoLinComentarioChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinComentario = value;
+					this.SendPropertyChanged("GtoLinComentario");
+					this.OnGtoLinComentarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoCocContador", DbType="SmallInt")]
+		public System.Nullable<short> GtoCocContador
+		{
+			get
+			{
+				return this._GtoCocContador;
+			}
+			set
+			{
+				if ((this._GtoCocContador != value))
+				{
+					this.OnGtoCocContadorChanging(value);
+					this.SendPropertyChanging();
+					this._GtoCocContador = value;
+					this.SendPropertyChanged("GtoCocContador");
+					this.OnGtoCocContadorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdImp", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinCmdImp
+		{
+			get
+			{
+				return this._GtoLinCmdImp;
+			}
+			set
+			{
+				if ((this._GtoLinCmdImp != value))
+				{
+					this.OnGtoLinCmdImpChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdImp = value;
+					this.SendPropertyChanged("GtoLinCmdImp");
+					this.OnGtoLinCmdImpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCantCubiertos", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinCantCubiertos
+		{
+			get
+			{
+				return this._GtoLinCantCubiertos;
+			}
+			set
+			{
+				if ((this._GtoLinCantCubiertos != value))
+				{
+					this.OnGtoLinCantCubiertosChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCantCubiertos = value;
+					this.SendPropertyChanged("GtoLinCantCubiertos");
+					this.OnGtoLinCantCubiertosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdEstado", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinCmdEstado
+		{
+			get
+			{
+				return this._GtoLinCmdEstado;
+			}
+			set
+			{
+				if ((this._GtoLinCmdEstado != value))
+				{
+					this.OnGtoLinCmdEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdEstado = value;
+					this.SendPropertyChanged("GtoLinCmdEstado");
+					this.OnGtoLinCmdEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdFechaLlegada", DbType="DateTime")]
+		public System.Nullable<System.DateTime> GtoLinCmdFechaLlegada
+		{
+			get
+			{
+				return this._GtoLinCmdFechaLlegada;
+			}
+			set
+			{
+				if ((this._GtoLinCmdFechaLlegada != value))
+				{
+					this.OnGtoLinCmdFechaLlegadaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdFechaLlegada = value;
+					this.SendPropertyChanged("GtoLinCmdFechaLlegada");
+					this.OnGtoLinCmdFechaLlegadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdHoraLlegada", DbType="Char(8)")]
+		public string GtoLinCmdHoraLlegada
+		{
+			get
+			{
+				return this._GtoLinCmdHoraLlegada;
+			}
+			set
+			{
+				if ((this._GtoLinCmdHoraLlegada != value))
+				{
+					this.OnGtoLinCmdHoraLlegadaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdHoraLlegada = value;
+					this.SendPropertyChanged("GtoLinCmdHoraLlegada");
+					this.OnGtoLinCmdHoraLlegadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdFechaLiberada", DbType="DateTime")]
+		public System.Nullable<System.DateTime> GtoLinCmdFechaLiberada
+		{
+			get
+			{
+				return this._GtoLinCmdFechaLiberada;
+			}
+			set
+			{
+				if ((this._GtoLinCmdFechaLiberada != value))
+				{
+					this.OnGtoLinCmdFechaLiberadaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdFechaLiberada = value;
+					this.SendPropertyChanged("GtoLinCmdFechaLiberada");
+					this.OnGtoLinCmdFechaLiberadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdHoraLiberada", DbType="Char(8)")]
+		public string GtoLinCmdHoraLiberada
+		{
+			get
+			{
+				return this._GtoLinCmdHoraLiberada;
+			}
+			set
+			{
+				if ((this._GtoLinCmdHoraLiberada != value))
+				{
+					this.OnGtoLinCmdHoraLiberadaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdHoraLiberada = value;
+					this.SendPropertyChanged("GtoLinCmdHoraLiberada");
+					this.OnGtoLinCmdHoraLiberadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdLinea", DbType="Int")]
+		public System.Nullable<int> GtoLinCmdLinea
+		{
+			get
+			{
+				return this._GtoLinCmdLinea;
+			}
+			set
+			{
+				if ((this._GtoLinCmdLinea != value))
+				{
+					this.OnGtoLinCmdLineaChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdLinea = value;
+					this.SendPropertyChanged("GtoLinCmdLinea");
+					this.OnGtoLinCmdLineaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinGruId", DbType="Char(8)")]
+		public string GtoLinGruId
+		{
+			get
+			{
+				return this._GtoLinGruId;
+			}
+			set
+			{
+				if ((this._GtoLinGruId != value))
+				{
+					this.OnGtoLinGruIdChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinGruId = value;
+					this.SendPropertyChanged("GtoLinGruId");
+					this.OnGtoLinGruIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinObsDescuento", DbType="Char(50)")]
+		public string GtoLinObsDescuento
+		{
+			get
+			{
+				return this._GtoLinObsDescuento;
+			}
+			set
+			{
+				if ((this._GtoLinObsDescuento != value))
+				{
+					this.OnGtoLinObsDescuentoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinObsDescuento = value;
+					this.SendPropertyChanged("GtoLinObsDescuento");
+					this.OnGtoLinObsDescuentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinEliminaSupervicion", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinEliminaSupervicion
+		{
+			get
+			{
+				return this._GtoLinEliminaSupervicion;
+			}
+			set
+			{
+				if ((this._GtoLinEliminaSupervicion != value))
+				{
+					this.OnGtoLinEliminaSupervicionChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinEliminaSupervicion = value;
+					this.SendPropertyChanged("GtoLinEliminaSupervicion");
+					this.OnGtoLinEliminaSupervicionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinBorro", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinBorro
+		{
+			get
+			{
+				return this._GtoLinBorro;
+			}
+			set
+			{
+				if ((this._GtoLinBorro != value))
+				{
+					this.OnGtoLinBorroChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinBorro = value;
+					this.SendPropertyChanged("GtoLinBorro");
+					this.OnGtoLinBorroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinEstConsumo", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinEstConsumo
+		{
+			get
+			{
+				return this._GtoLinEstConsumo;
+			}
+			set
+			{
+				if ((this._GtoLinEstConsumo != value))
+				{
+					this.OnGtoLinEstConsumoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinEstConsumo = value;
+					this.SendPropertyChanged("GtoLinEstConsumo");
+					this.OnGtoLinEstConsumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinCmdLugar", DbType="SmallInt")]
+		public System.Nullable<short> GtoLinCmdLugar
+		{
+			get
+			{
+				return this._GtoLinCmdLugar;
+			}
+			set
+			{
+				if ((this._GtoLinCmdLugar != value))
+				{
+					this.OnGtoLinCmdLugarChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinCmdLugar = value;
+					this.SendPropertyChanged("GtoLinCmdLugar");
+					this.OnGtoLinCmdLugarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GtoLinSexo", DbType="Char(1)")]
+		public System.Nullable<char> GtoLinSexo
+		{
+			get
+			{
+				return this._GtoLinSexo;
+			}
+			set
+			{
+				if ((this._GtoLinSexo != value))
+				{
+					this.OnGtoLinSexoChanging(value);
+					this.SendPropertyChanging();
+					this._GtoLinSexo = value;
+					this.SendPropertyChanged("GtoLinSexo");
+					this.OnGtoLinSexoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gas1ExportacionId", DbType="Int")]
+		public System.Nullable<int> Gas1ExportacionId
+		{
+			get
+			{
+				return this._Gas1ExportacionId;
+			}
+			set
+			{
+				if ((this._Gas1ExportacionId != value))
+				{
+					this.OnGas1ExportacionIdChanging(value);
+					this.SendPropertyChanging();
+					this._Gas1ExportacionId = value;
+					this.SendPropertyChanged("Gas1ExportacionId");
+					this.OnGas1ExportacionIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ARTICULOS")]
+	public partial class ARTICULOS : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ArtId;
+		
+		private string _ArtDsc;
+		
+		private string _ArtDscAbr;
+		
+		private System.Nullable<int> _ProId;
+		
+		private System.Nullable<char> _ArtDesEnv;
+		
+		private System.Nullable<decimal> _ArtStkMin;
+		
+		private System.Nullable<decimal> _ArtPreba;
+		
+		private System.Nullable<short> _MonId;
+		
+		private System.Nullable<decimal> _ArtCant;
+		
+		private System.Nullable<char> _ArtCom;
+		
+		private System.Nullable<System.DateTime> _ArtUltCom;
+		
+		private System.Nullable<System.DateTime> _ArtUltVen;
+		
+		private System.Nullable<decimal> _ArtCanVen;
+		
+		private System.Nullable<decimal> _ArtCanDev;
+		
+		private System.Nullable<decimal> _ArtTotVen;
+		
+		private System.Nullable<char> _ArtFrac;
+		
+		private System.Nullable<char> _ArtForVen;
+		
+		private System.Nullable<char> _ArtForCom;
+		
+		private System.Nullable<int> _ArtBulto;
+		
+		private System.Nullable<short> _ArtEnvCod;
+		
+		private System.Nullable<char> _ArtEstado;
+		
+		private System.Nullable<char> _ArtMerca;
+		
+		private System.Nullable<decimal> _ArtStkSuc;
+		
+		private System.Nullable<decimal> _ArtStkTotal;
+		
+		private System.Nullable<char> _ArtPerDto;
+		
+		private System.Nullable<char> _ArtManStk;
+		
+		private System.Nullable<short> _UniId;
+		
+		private System.Nullable<short> _CmdId;
+		
+		private string _RubId;
+		
+		private System.Nullable<decimal> _ArtDto1;
+		
+		private System.Nullable<decimal> _ArtDto2;
+		
+		private System.Nullable<decimal> _ArtDto3;
+		
+		private string _ArtObsFor;
+		
+		private System.Nullable<char> _ArtFormula;
+		
+		private System.Nullable<short> _ArtSitConId;
+		
+		private System.Nullable<char> _ArtCubierto;
+		
+		private string _ArtBotonTs;
+		
+		private System.Nullable<int> _ArtPlanCtaMerCompaId;
+		
+		private System.Nullable<int> _ArtPlanCtaVentaId;
+		
+		private string _RubIdCompra;
+		
+		private System.Nullable<short> _ArtXMoneda;
+		
+		private System.Nullable<short> _ArtXLista;
+		
+		private System.Nullable<decimal> _ArtXPrecio;
+		
+		private System.Nullable<decimal> _ArtImpuestoInterno;
+		
+		private System.Nullable<short> _ArtMonIdFormula;
+		
+		private System.Nullable<decimal> _ArtSucId1;
+		
+		private System.Nullable<decimal> _ArtSucId2;
+		
+		private System.Nullable<decimal> _ArtSucId3;
+		
+		private System.Nullable<decimal> _ArtSucId4;
+		
+		private System.Nullable<decimal> _ArtSucId5;
+		
+		private System.Nullable<decimal> _ArtSucId6;
+		
+		private System.Nullable<decimal> _ArtSucId7;
+		
+		private System.Nullable<decimal> _ArtSucId8;
+		
+		private System.Nullable<decimal> _ArtSucId9;
+		
+		private System.Nullable<decimal> _ArtSucId0;
+		
+		private System.Nullable<char> _ArtSuperArticulo;
+		
+		private System.Nullable<decimal> _ArtTamanio;
+		
+		private System.Nullable<char> _ArtComplementoArticulo;
+		
+		private System.Nullable<char> _ArtImpConInv;
+		
+		private string _ArtCodBarra;
+		
+		private string _ArtXPuntoDeVentaId;
+		
+		private System.Nullable<char> _ArtManStkFinFor;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnArtIdChanging(int value);
+    partial void OnArtIdChanged();
+    partial void OnArtDscChanging(string value);
+    partial void OnArtDscChanged();
+    partial void OnArtDscAbrChanging(string value);
+    partial void OnArtDscAbrChanged();
+    partial void OnProIdChanging(System.Nullable<int> value);
+    partial void OnProIdChanged();
+    partial void OnArtDesEnvChanging(System.Nullable<char> value);
+    partial void OnArtDesEnvChanged();
+    partial void OnArtStkMinChanging(System.Nullable<decimal> value);
+    partial void OnArtStkMinChanged();
+    partial void OnArtPrebaChanging(System.Nullable<decimal> value);
+    partial void OnArtPrebaChanged();
+    partial void OnMonIdChanging(System.Nullable<short> value);
+    partial void OnMonIdChanged();
+    partial void OnArtCantChanging(System.Nullable<decimal> value);
+    partial void OnArtCantChanged();
+    partial void OnArtComChanging(System.Nullable<char> value);
+    partial void OnArtComChanged();
+    partial void OnArtUltComChanging(System.Nullable<System.DateTime> value);
+    partial void OnArtUltComChanged();
+    partial void OnArtUltVenChanging(System.Nullable<System.DateTime> value);
+    partial void OnArtUltVenChanged();
+    partial void OnArtCanVenChanging(System.Nullable<decimal> value);
+    partial void OnArtCanVenChanged();
+    partial void OnArtCanDevChanging(System.Nullable<decimal> value);
+    partial void OnArtCanDevChanged();
+    partial void OnArtTotVenChanging(System.Nullable<decimal> value);
+    partial void OnArtTotVenChanged();
+    partial void OnArtFracChanging(System.Nullable<char> value);
+    partial void OnArtFracChanged();
+    partial void OnArtForVenChanging(System.Nullable<char> value);
+    partial void OnArtForVenChanged();
+    partial void OnArtForComChanging(System.Nullable<char> value);
+    partial void OnArtForComChanged();
+    partial void OnArtBultoChanging(System.Nullable<int> value);
+    partial void OnArtBultoChanged();
+    partial void OnArtEnvCodChanging(System.Nullable<short> value);
+    partial void OnArtEnvCodChanged();
+    partial void OnArtEstadoChanging(System.Nullable<char> value);
+    partial void OnArtEstadoChanged();
+    partial void OnArtMercaChanging(System.Nullable<char> value);
+    partial void OnArtMercaChanged();
+    partial void OnArtStkSucChanging(System.Nullable<decimal> value);
+    partial void OnArtStkSucChanged();
+    partial void OnArtStkTotalChanging(System.Nullable<decimal> value);
+    partial void OnArtStkTotalChanged();
+    partial void OnArtPerDtoChanging(System.Nullable<char> value);
+    partial void OnArtPerDtoChanged();
+    partial void OnArtManStkChanging(System.Nullable<char> value);
+    partial void OnArtManStkChanged();
+    partial void OnUniIdChanging(System.Nullable<short> value);
+    partial void OnUniIdChanged();
+    partial void OnCmdIdChanging(System.Nullable<short> value);
+    partial void OnCmdIdChanged();
+    partial void OnRubIdChanging(string value);
+    partial void OnRubIdChanged();
+    partial void OnArtDto1Changing(System.Nullable<decimal> value);
+    partial void OnArtDto1Changed();
+    partial void OnArtDto2Changing(System.Nullable<decimal> value);
+    partial void OnArtDto2Changed();
+    partial void OnArtDto3Changing(System.Nullable<decimal> value);
+    partial void OnArtDto3Changed();
+    partial void OnArtObsForChanging(string value);
+    partial void OnArtObsForChanged();
+    partial void OnArtFormulaChanging(System.Nullable<char> value);
+    partial void OnArtFormulaChanged();
+    partial void OnArtSitConIdChanging(System.Nullable<short> value);
+    partial void OnArtSitConIdChanged();
+    partial void OnArtCubiertoChanging(System.Nullable<char> value);
+    partial void OnArtCubiertoChanged();
+    partial void OnArtBotonTsChanging(string value);
+    partial void OnArtBotonTsChanged();
+    partial void OnArtPlanCtaMerCompaIdChanging(System.Nullable<int> value);
+    partial void OnArtPlanCtaMerCompaIdChanged();
+    partial void OnArtPlanCtaVentaIdChanging(System.Nullable<int> value);
+    partial void OnArtPlanCtaVentaIdChanged();
+    partial void OnRubIdCompraChanging(string value);
+    partial void OnRubIdCompraChanged();
+    partial void OnArtXMonedaChanging(System.Nullable<short> value);
+    partial void OnArtXMonedaChanged();
+    partial void OnArtXListaChanging(System.Nullable<short> value);
+    partial void OnArtXListaChanged();
+    partial void OnArtXPrecioChanging(System.Nullable<decimal> value);
+    partial void OnArtXPrecioChanged();
+    partial void OnArtImpuestoInternoChanging(System.Nullable<decimal> value);
+    partial void OnArtImpuestoInternoChanged();
+    partial void OnArtMonIdFormulaChanging(System.Nullable<short> value);
+    partial void OnArtMonIdFormulaChanged();
+    partial void OnArtSucId1Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId1Changed();
+    partial void OnArtSucId2Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId2Changed();
+    partial void OnArtSucId3Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId3Changed();
+    partial void OnArtSucId4Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId4Changed();
+    partial void OnArtSucId5Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId5Changed();
+    partial void OnArtSucId6Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId6Changed();
+    partial void OnArtSucId7Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId7Changed();
+    partial void OnArtSucId8Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId8Changed();
+    partial void OnArtSucId9Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId9Changed();
+    partial void OnArtSucId0Changing(System.Nullable<decimal> value);
+    partial void OnArtSucId0Changed();
+    partial void OnArtSuperArticuloChanging(System.Nullable<char> value);
+    partial void OnArtSuperArticuloChanged();
+    partial void OnArtTamanioChanging(System.Nullable<decimal> value);
+    partial void OnArtTamanioChanged();
+    partial void OnArtComplementoArticuloChanging(System.Nullable<char> value);
+    partial void OnArtComplementoArticuloChanged();
+    partial void OnArtImpConInvChanging(System.Nullable<char> value);
+    partial void OnArtImpConInvChanged();
+    partial void OnArtCodBarraChanging(string value);
+    partial void OnArtCodBarraChanged();
+    partial void OnArtXPuntoDeVentaIdChanging(string value);
+    partial void OnArtXPuntoDeVentaIdChanged();
+    partial void OnArtManStkFinForChanging(System.Nullable<char> value);
+    partial void OnArtManStkFinForChanged();
+    #endregion
+		
+		public ARTICULOS()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ArtId
+		{
+			get
+			{
+				return this._ArtId;
+			}
+			set
+			{
+				if ((this._ArtId != value))
+				{
+					this.OnArtIdChanging(value);
+					this.SendPropertyChanging();
+					this._ArtId = value;
+					this.SendPropertyChanged("ArtId");
+					this.OnArtIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtDsc", DbType="Char(50)")]
+		public string ArtDsc
+		{
+			get
+			{
+				return this._ArtDsc;
+			}
+			set
+			{
+				if ((this._ArtDsc != value))
+				{
+					this.OnArtDscChanging(value);
+					this.SendPropertyChanging();
+					this._ArtDsc = value;
+					this.SendPropertyChanged("ArtDsc");
+					this.OnArtDscChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtDscAbr", DbType="Char(16)")]
+		public string ArtDscAbr
+		{
+			get
+			{
+				return this._ArtDscAbr;
+			}
+			set
+			{
+				if ((this._ArtDscAbr != value))
+				{
+					this.OnArtDscAbrChanging(value);
+					this.SendPropertyChanging();
+					this._ArtDscAbr = value;
+					this.SendPropertyChanged("ArtDscAbr");
+					this.OnArtDscAbrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProId", DbType="Int")]
+		public System.Nullable<int> ProId
+		{
+			get
+			{
+				return this._ProId;
+			}
+			set
+			{
+				if ((this._ProId != value))
+				{
+					this.OnProIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProId = value;
+					this.SendPropertyChanged("ProId");
+					this.OnProIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtDesEnv", DbType="Char(1)")]
+		public System.Nullable<char> ArtDesEnv
+		{
+			get
+			{
+				return this._ArtDesEnv;
+			}
+			set
+			{
+				if ((this._ArtDesEnv != value))
+				{
+					this.OnArtDesEnvChanging(value);
+					this.SendPropertyChanging();
+					this._ArtDesEnv = value;
+					this.SendPropertyChanged("ArtDesEnv");
+					this.OnArtDesEnvChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtStkMin", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtStkMin
+		{
+			get
+			{
+				return this._ArtStkMin;
+			}
+			set
+			{
+				if ((this._ArtStkMin != value))
+				{
+					this.OnArtStkMinChanging(value);
+					this.SendPropertyChanging();
+					this._ArtStkMin = value;
+					this.SendPropertyChanged("ArtStkMin");
+					this.OnArtStkMinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPreba", DbType="Decimal(11,4)")]
+		public System.Nullable<decimal> ArtPreba
+		{
+			get
+			{
+				return this._ArtPreba;
+			}
+			set
+			{
+				if ((this._ArtPreba != value))
+				{
+					this.OnArtPrebaChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPreba = value;
+					this.SendPropertyChanged("ArtPreba");
+					this.OnArtPrebaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MonId", DbType="SmallInt")]
+		public System.Nullable<short> MonId
+		{
+			get
+			{
+				return this._MonId;
+			}
+			set
+			{
+				if ((this._MonId != value))
+				{
+					this.OnMonIdChanging(value);
+					this.SendPropertyChanging();
+					this._MonId = value;
+					this.SendPropertyChanged("MonId");
+					this.OnMonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtCant", DbType="Money")]
+		public System.Nullable<decimal> ArtCant
+		{
+			get
+			{
+				return this._ArtCant;
+			}
+			set
+			{
+				if ((this._ArtCant != value))
+				{
+					this.OnArtCantChanging(value);
+					this.SendPropertyChanging();
+					this._ArtCant = value;
+					this.SendPropertyChanged("ArtCant");
+					this.OnArtCantChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtCom", DbType="Char(1)")]
+		public System.Nullable<char> ArtCom
+		{
+			get
+			{
+				return this._ArtCom;
+			}
+			set
+			{
+				if ((this._ArtCom != value))
+				{
+					this.OnArtComChanging(value);
+					this.SendPropertyChanging();
+					this._ArtCom = value;
+					this.SendPropertyChanged("ArtCom");
+					this.OnArtComChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtUltCom", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ArtUltCom
+		{
+			get
+			{
+				return this._ArtUltCom;
+			}
+			set
+			{
+				if ((this._ArtUltCom != value))
+				{
+					this.OnArtUltComChanging(value);
+					this.SendPropertyChanging();
+					this._ArtUltCom = value;
+					this.SendPropertyChanged("ArtUltCom");
+					this.OnArtUltComChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtUltVen", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ArtUltVen
+		{
+			get
+			{
+				return this._ArtUltVen;
+			}
+			set
+			{
+				if ((this._ArtUltVen != value))
+				{
+					this.OnArtUltVenChanging(value);
+					this.SendPropertyChanging();
+					this._ArtUltVen = value;
+					this.SendPropertyChanged("ArtUltVen");
+					this.OnArtUltVenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtCanVen", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtCanVen
+		{
+			get
+			{
+				return this._ArtCanVen;
+			}
+			set
+			{
+				if ((this._ArtCanVen != value))
+				{
+					this.OnArtCanVenChanging(value);
+					this.SendPropertyChanging();
+					this._ArtCanVen = value;
+					this.SendPropertyChanged("ArtCanVen");
+					this.OnArtCanVenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtCanDev", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtCanDev
+		{
+			get
+			{
+				return this._ArtCanDev;
+			}
+			set
+			{
+				if ((this._ArtCanDev != value))
+				{
+					this.OnArtCanDevChanging(value);
+					this.SendPropertyChanging();
+					this._ArtCanDev = value;
+					this.SendPropertyChanged("ArtCanDev");
+					this.OnArtCanDevChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtTotVen", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtTotVen
+		{
+			get
+			{
+				return this._ArtTotVen;
+			}
+			set
+			{
+				if ((this._ArtTotVen != value))
+				{
+					this.OnArtTotVenChanging(value);
+					this.SendPropertyChanging();
+					this._ArtTotVen = value;
+					this.SendPropertyChanged("ArtTotVen");
+					this.OnArtTotVenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtFrac", DbType="Char(1)")]
+		public System.Nullable<char> ArtFrac
+		{
+			get
+			{
+				return this._ArtFrac;
+			}
+			set
+			{
+				if ((this._ArtFrac != value))
+				{
+					this.OnArtFracChanging(value);
+					this.SendPropertyChanging();
+					this._ArtFrac = value;
+					this.SendPropertyChanged("ArtFrac");
+					this.OnArtFracChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtForVen", DbType="Char(1)")]
+		public System.Nullable<char> ArtForVen
+		{
+			get
+			{
+				return this._ArtForVen;
+			}
+			set
+			{
+				if ((this._ArtForVen != value))
+				{
+					this.OnArtForVenChanging(value);
+					this.SendPropertyChanging();
+					this._ArtForVen = value;
+					this.SendPropertyChanged("ArtForVen");
+					this.OnArtForVenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtForCom", DbType="Char(1)")]
+		public System.Nullable<char> ArtForCom
+		{
+			get
+			{
+				return this._ArtForCom;
+			}
+			set
+			{
+				if ((this._ArtForCom != value))
+				{
+					this.OnArtForComChanging(value);
+					this.SendPropertyChanging();
+					this._ArtForCom = value;
+					this.SendPropertyChanged("ArtForCom");
+					this.OnArtForComChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtBulto", DbType="Int")]
+		public System.Nullable<int> ArtBulto
+		{
+			get
+			{
+				return this._ArtBulto;
+			}
+			set
+			{
+				if ((this._ArtBulto != value))
+				{
+					this.OnArtBultoChanging(value);
+					this.SendPropertyChanging();
+					this._ArtBulto = value;
+					this.SendPropertyChanged("ArtBulto");
+					this.OnArtBultoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtEnvCod", DbType="SmallInt")]
+		public System.Nullable<short> ArtEnvCod
+		{
+			get
+			{
+				return this._ArtEnvCod;
+			}
+			set
+			{
+				if ((this._ArtEnvCod != value))
+				{
+					this.OnArtEnvCodChanging(value);
+					this.SendPropertyChanging();
+					this._ArtEnvCod = value;
+					this.SendPropertyChanged("ArtEnvCod");
+					this.OnArtEnvCodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtEstado", DbType="Char(1)")]
+		public System.Nullable<char> ArtEstado
+		{
+			get
+			{
+				return this._ArtEstado;
+			}
+			set
+			{
+				if ((this._ArtEstado != value))
+				{
+					this.OnArtEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._ArtEstado = value;
+					this.SendPropertyChanged("ArtEstado");
+					this.OnArtEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtMerca", DbType="Char(1)")]
+		public System.Nullable<char> ArtMerca
+		{
+			get
+			{
+				return this._ArtMerca;
+			}
+			set
+			{
+				if ((this._ArtMerca != value))
+				{
+					this.OnArtMercaChanging(value);
+					this.SendPropertyChanging();
+					this._ArtMerca = value;
+					this.SendPropertyChanged("ArtMerca");
+					this.OnArtMercaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtStkSuc", DbType="Money")]
+		public System.Nullable<decimal> ArtStkSuc
+		{
+			get
+			{
+				return this._ArtStkSuc;
+			}
+			set
+			{
+				if ((this._ArtStkSuc != value))
+				{
+					this.OnArtStkSucChanging(value);
+					this.SendPropertyChanging();
+					this._ArtStkSuc = value;
+					this.SendPropertyChanged("ArtStkSuc");
+					this.OnArtStkSucChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtStkTotal", DbType="Money")]
+		public System.Nullable<decimal> ArtStkTotal
+		{
+			get
+			{
+				return this._ArtStkTotal;
+			}
+			set
+			{
+				if ((this._ArtStkTotal != value))
+				{
+					this.OnArtStkTotalChanging(value);
+					this.SendPropertyChanging();
+					this._ArtStkTotal = value;
+					this.SendPropertyChanged("ArtStkTotal");
+					this.OnArtStkTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPerDto", DbType="Char(1)")]
+		public System.Nullable<char> ArtPerDto
+		{
+			get
+			{
+				return this._ArtPerDto;
+			}
+			set
+			{
+				if ((this._ArtPerDto != value))
+				{
+					this.OnArtPerDtoChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPerDto = value;
+					this.SendPropertyChanged("ArtPerDto");
+					this.OnArtPerDtoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtManStk", DbType="Char(1)")]
+		public System.Nullable<char> ArtManStk
+		{
+			get
+			{
+				return this._ArtManStk;
+			}
+			set
+			{
+				if ((this._ArtManStk != value))
+				{
+					this.OnArtManStkChanging(value);
+					this.SendPropertyChanging();
+					this._ArtManStk = value;
+					this.SendPropertyChanged("ArtManStk");
+					this.OnArtManStkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniId", DbType="SmallInt")]
+		public System.Nullable<short> UniId
+		{
+			get
+			{
+				return this._UniId;
+			}
+			set
+			{
+				if ((this._UniId != value))
+				{
+					this.OnUniIdChanging(value);
+					this.SendPropertyChanging();
+					this._UniId = value;
+					this.SendPropertyChanged("UniId");
+					this.OnUniIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CmdId", DbType="SmallInt")]
+		public System.Nullable<short> CmdId
+		{
+			get
+			{
+				return this._CmdId;
+			}
+			set
+			{
+				if ((this._CmdId != value))
+				{
+					this.OnCmdIdChanging(value);
+					this.SendPropertyChanging();
+					this._CmdId = value;
+					this.SendPropertyChanged("CmdId");
+					this.OnCmdIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RubId", DbType="Char(30)")]
+		public string RubId
+		{
+			get
+			{
+				return this._RubId;
+			}
+			set
+			{
+				if ((this._RubId != value))
+				{
+					this.OnRubIdChanging(value);
+					this.SendPropertyChanging();
+					this._RubId = value;
+					this.SendPropertyChanged("RubId");
+					this.OnRubIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtDto1", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtDto1
+		{
+			get
+			{
+				return this._ArtDto1;
+			}
+			set
+			{
+				if ((this._ArtDto1 != value))
+				{
+					this.OnArtDto1Changing(value);
+					this.SendPropertyChanging();
+					this._ArtDto1 = value;
+					this.SendPropertyChanged("ArtDto1");
+					this.OnArtDto1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtDto2", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtDto2
+		{
+			get
+			{
+				return this._ArtDto2;
+			}
+			set
+			{
+				if ((this._ArtDto2 != value))
+				{
+					this.OnArtDto2Changing(value);
+					this.SendPropertyChanging();
+					this._ArtDto2 = value;
+					this.SendPropertyChanged("ArtDto2");
+					this.OnArtDto2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtDto3", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtDto3
+		{
+			get
+			{
+				return this._ArtDto3;
+			}
+			set
+			{
+				if ((this._ArtDto3 != value))
+				{
+					this.OnArtDto3Changing(value);
+					this.SendPropertyChanging();
+					this._ArtDto3 = value;
+					this.SendPropertyChanged("ArtDto3");
+					this.OnArtDto3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtObsFor", DbType="Char(200)")]
+		public string ArtObsFor
+		{
+			get
+			{
+				return this._ArtObsFor;
+			}
+			set
+			{
+				if ((this._ArtObsFor != value))
+				{
+					this.OnArtObsForChanging(value);
+					this.SendPropertyChanging();
+					this._ArtObsFor = value;
+					this.SendPropertyChanged("ArtObsFor");
+					this.OnArtObsForChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtFormula", DbType="Char(1)")]
+		public System.Nullable<char> ArtFormula
+		{
+			get
+			{
+				return this._ArtFormula;
+			}
+			set
+			{
+				if ((this._ArtFormula != value))
+				{
+					this.OnArtFormulaChanging(value);
+					this.SendPropertyChanging();
+					this._ArtFormula = value;
+					this.SendPropertyChanged("ArtFormula");
+					this.OnArtFormulaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSitConId", DbType="SmallInt")]
+		public System.Nullable<short> ArtSitConId
+		{
+			get
+			{
+				return this._ArtSitConId;
+			}
+			set
+			{
+				if ((this._ArtSitConId != value))
+				{
+					this.OnArtSitConIdChanging(value);
+					this.SendPropertyChanging();
+					this._ArtSitConId = value;
+					this.SendPropertyChanged("ArtSitConId");
+					this.OnArtSitConIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtCubierto", DbType="Char(1)")]
+		public System.Nullable<char> ArtCubierto
+		{
+			get
+			{
+				return this._ArtCubierto;
+			}
+			set
+			{
+				if ((this._ArtCubierto != value))
+				{
+					this.OnArtCubiertoChanging(value);
+					this.SendPropertyChanging();
+					this._ArtCubierto = value;
+					this.SendPropertyChanged("ArtCubierto");
+					this.OnArtCubiertoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtBotonTs", DbType="Char(40)")]
+		public string ArtBotonTs
+		{
+			get
+			{
+				return this._ArtBotonTs;
+			}
+			set
+			{
+				if ((this._ArtBotonTs != value))
+				{
+					this.OnArtBotonTsChanging(value);
+					this.SendPropertyChanging();
+					this._ArtBotonTs = value;
+					this.SendPropertyChanged("ArtBotonTs");
+					this.OnArtBotonTsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPlanCtaMerCompaId", DbType="Int")]
+		public System.Nullable<int> ArtPlanCtaMerCompaId
+		{
+			get
+			{
+				return this._ArtPlanCtaMerCompaId;
+			}
+			set
+			{
+				if ((this._ArtPlanCtaMerCompaId != value))
+				{
+					this.OnArtPlanCtaMerCompaIdChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPlanCtaMerCompaId = value;
+					this.SendPropertyChanged("ArtPlanCtaMerCompaId");
+					this.OnArtPlanCtaMerCompaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPlanCtaVentaId", DbType="Int")]
+		public System.Nullable<int> ArtPlanCtaVentaId
+		{
+			get
+			{
+				return this._ArtPlanCtaVentaId;
+			}
+			set
+			{
+				if ((this._ArtPlanCtaVentaId != value))
+				{
+					this.OnArtPlanCtaVentaIdChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPlanCtaVentaId = value;
+					this.SendPropertyChanged("ArtPlanCtaVentaId");
+					this.OnArtPlanCtaVentaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RubIdCompra", DbType="Char(30)")]
+		public string RubIdCompra
+		{
+			get
+			{
+				return this._RubIdCompra;
+			}
+			set
+			{
+				if ((this._RubIdCompra != value))
+				{
+					this.OnRubIdCompraChanging(value);
+					this.SendPropertyChanging();
+					this._RubIdCompra = value;
+					this.SendPropertyChanged("RubIdCompra");
+					this.OnRubIdCompraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtXMoneda", DbType="SmallInt")]
+		public System.Nullable<short> ArtXMoneda
+		{
+			get
+			{
+				return this._ArtXMoneda;
+			}
+			set
+			{
+				if ((this._ArtXMoneda != value))
+				{
+					this.OnArtXMonedaChanging(value);
+					this.SendPropertyChanging();
+					this._ArtXMoneda = value;
+					this.SendPropertyChanged("ArtXMoneda");
+					this.OnArtXMonedaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtXLista", DbType="SmallInt")]
+		public System.Nullable<short> ArtXLista
+		{
+			get
+			{
+				return this._ArtXLista;
+			}
+			set
+			{
+				if ((this._ArtXLista != value))
+				{
+					this.OnArtXListaChanging(value);
+					this.SendPropertyChanging();
+					this._ArtXLista = value;
+					this.SendPropertyChanged("ArtXLista");
+					this.OnArtXListaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtXPrecio", DbType="Money")]
+		public System.Nullable<decimal> ArtXPrecio
+		{
+			get
+			{
+				return this._ArtXPrecio;
+			}
+			set
+			{
+				if ((this._ArtXPrecio != value))
+				{
+					this.OnArtXPrecioChanging(value);
+					this.SendPropertyChanging();
+					this._ArtXPrecio = value;
+					this.SendPropertyChanged("ArtXPrecio");
+					this.OnArtXPrecioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtImpuestoInterno", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtImpuestoInterno
+		{
+			get
+			{
+				return this._ArtImpuestoInterno;
+			}
+			set
+			{
+				if ((this._ArtImpuestoInterno != value))
+				{
+					this.OnArtImpuestoInternoChanging(value);
+					this.SendPropertyChanging();
+					this._ArtImpuestoInterno = value;
+					this.SendPropertyChanged("ArtImpuestoInterno");
+					this.OnArtImpuestoInternoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtMonIdFormula", DbType="SmallInt")]
+		public System.Nullable<short> ArtMonIdFormula
+		{
+			get
+			{
+				return this._ArtMonIdFormula;
+			}
+			set
+			{
+				if ((this._ArtMonIdFormula != value))
+				{
+					this.OnArtMonIdFormulaChanging(value);
+					this.SendPropertyChanging();
+					this._ArtMonIdFormula = value;
+					this.SendPropertyChanged("ArtMonIdFormula");
+					this.OnArtMonIdFormulaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId1", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId1
+		{
+			get
+			{
+				return this._ArtSucId1;
+			}
+			set
+			{
+				if ((this._ArtSucId1 != value))
+				{
+					this.OnArtSucId1Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId1 = value;
+					this.SendPropertyChanged("ArtSucId1");
+					this.OnArtSucId1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId2", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId2
+		{
+			get
+			{
+				return this._ArtSucId2;
+			}
+			set
+			{
+				if ((this._ArtSucId2 != value))
+				{
+					this.OnArtSucId2Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId2 = value;
+					this.SendPropertyChanged("ArtSucId2");
+					this.OnArtSucId2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId3", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId3
+		{
+			get
+			{
+				return this._ArtSucId3;
+			}
+			set
+			{
+				if ((this._ArtSucId3 != value))
+				{
+					this.OnArtSucId3Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId3 = value;
+					this.SendPropertyChanged("ArtSucId3");
+					this.OnArtSucId3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId4", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId4
+		{
+			get
+			{
+				return this._ArtSucId4;
+			}
+			set
+			{
+				if ((this._ArtSucId4 != value))
+				{
+					this.OnArtSucId4Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId4 = value;
+					this.SendPropertyChanged("ArtSucId4");
+					this.OnArtSucId4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId5", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId5
+		{
+			get
+			{
+				return this._ArtSucId5;
+			}
+			set
+			{
+				if ((this._ArtSucId5 != value))
+				{
+					this.OnArtSucId5Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId5 = value;
+					this.SendPropertyChanged("ArtSucId5");
+					this.OnArtSucId5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId6", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId6
+		{
+			get
+			{
+				return this._ArtSucId6;
+			}
+			set
+			{
+				if ((this._ArtSucId6 != value))
+				{
+					this.OnArtSucId6Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId6 = value;
+					this.SendPropertyChanged("ArtSucId6");
+					this.OnArtSucId6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId7", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId7
+		{
+			get
+			{
+				return this._ArtSucId7;
+			}
+			set
+			{
+				if ((this._ArtSucId7 != value))
+				{
+					this.OnArtSucId7Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId7 = value;
+					this.SendPropertyChanged("ArtSucId7");
+					this.OnArtSucId7Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId8", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId8
+		{
+			get
+			{
+				return this._ArtSucId8;
+			}
+			set
+			{
+				if ((this._ArtSucId8 != value))
+				{
+					this.OnArtSucId8Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId8 = value;
+					this.SendPropertyChanged("ArtSucId8");
+					this.OnArtSucId8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId9", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId9
+		{
+			get
+			{
+				return this._ArtSucId9;
+			}
+			set
+			{
+				if ((this._ArtSucId9 != value))
+				{
+					this.OnArtSucId9Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId9 = value;
+					this.SendPropertyChanged("ArtSucId9");
+					this.OnArtSucId9Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSucId0", DbType="Money")]
+		public System.Nullable<decimal> ArtSucId0
+		{
+			get
+			{
+				return this._ArtSucId0;
+			}
+			set
+			{
+				if ((this._ArtSucId0 != value))
+				{
+					this.OnArtSucId0Changing(value);
+					this.SendPropertyChanging();
+					this._ArtSucId0 = value;
+					this.SendPropertyChanged("ArtSucId0");
+					this.OnArtSucId0Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtSuperArticulo", DbType="Char(1)")]
+		public System.Nullable<char> ArtSuperArticulo
+		{
+			get
+			{
+				return this._ArtSuperArticulo;
+			}
+			set
+			{
+				if ((this._ArtSuperArticulo != value))
+				{
+					this.OnArtSuperArticuloChanging(value);
+					this.SendPropertyChanging();
+					this._ArtSuperArticulo = value;
+					this.SendPropertyChanged("ArtSuperArticulo");
+					this.OnArtSuperArticuloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtTamanio", DbType="Money")]
+		public System.Nullable<decimal> ArtTamanio
+		{
+			get
+			{
+				return this._ArtTamanio;
+			}
+			set
+			{
+				if ((this._ArtTamanio != value))
+				{
+					this.OnArtTamanioChanging(value);
+					this.SendPropertyChanging();
+					this._ArtTamanio = value;
+					this.SendPropertyChanged("ArtTamanio");
+					this.OnArtTamanioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtComplementoArticulo", DbType="Char(1)")]
+		public System.Nullable<char> ArtComplementoArticulo
+		{
+			get
+			{
+				return this._ArtComplementoArticulo;
+			}
+			set
+			{
+				if ((this._ArtComplementoArticulo != value))
+				{
+					this.OnArtComplementoArticuloChanging(value);
+					this.SendPropertyChanging();
+					this._ArtComplementoArticulo = value;
+					this.SendPropertyChanged("ArtComplementoArticulo");
+					this.OnArtComplementoArticuloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtImpConInv", DbType="Char(1)")]
+		public System.Nullable<char> ArtImpConInv
+		{
+			get
+			{
+				return this._ArtImpConInv;
+			}
+			set
+			{
+				if ((this._ArtImpConInv != value))
+				{
+					this.OnArtImpConInvChanging(value);
+					this.SendPropertyChanging();
+					this._ArtImpConInv = value;
+					this.SendPropertyChanged("ArtImpConInv");
+					this.OnArtImpConInvChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtCodBarra", DbType="Char(18)")]
+		public string ArtCodBarra
+		{
+			get
+			{
+				return this._ArtCodBarra;
+			}
+			set
+			{
+				if ((this._ArtCodBarra != value))
+				{
+					this.OnArtCodBarraChanging(value);
+					this.SendPropertyChanging();
+					this._ArtCodBarra = value;
+					this.SendPropertyChanged("ArtCodBarra");
+					this.OnArtCodBarraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtXPuntoDeVentaId", DbType="Char(3)")]
+		public string ArtXPuntoDeVentaId
+		{
+			get
+			{
+				return this._ArtXPuntoDeVentaId;
+			}
+			set
+			{
+				if ((this._ArtXPuntoDeVentaId != value))
+				{
+					this.OnArtXPuntoDeVentaIdChanging(value);
+					this.SendPropertyChanging();
+					this._ArtXPuntoDeVentaId = value;
+					this.SendPropertyChanged("ArtXPuntoDeVentaId");
+					this.OnArtXPuntoDeVentaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtManStkFinFor", DbType="Char(1)")]
+		public System.Nullable<char> ArtManStkFinFor
+		{
+			get
+			{
+				return this._ArtManStkFinFor;
+			}
+			set
+			{
+				if ((this._ArtManStkFinFor != value))
+				{
+					this.OnArtManStkFinForChanging(value);
+					this.SendPropertyChanging();
+					this._ArtManStkFinFor = value;
+					this.SendPropertyChanged("ArtManStkFinFor");
+					this.OnArtManStkFinForChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LISPRE")]
+	public partial class LISPRE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private short _LisId;
+		
+		private string _LisDsc;
+		
+		private System.Nullable<decimal> _LisPor;
+		
+		private System.Nullable<decimal> _LisCom;
+		
+		private System.Nullable<char> _LisIvaInc;
+		
+		private string _LisPie;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLisIdChanging(short value);
+    partial void OnLisIdChanged();
+    partial void OnLisDscChanging(string value);
+    partial void OnLisDscChanged();
+    partial void OnLisPorChanging(System.Nullable<decimal> value);
+    partial void OnLisPorChanged();
+    partial void OnLisComChanging(System.Nullable<decimal> value);
+    partial void OnLisComChanged();
+    partial void OnLisIvaIncChanging(System.Nullable<char> value);
+    partial void OnLisIvaIncChanged();
+    partial void OnLisPieChanging(string value);
+    partial void OnLisPieChanged();
+    #endregion
+		
+		public LISPRE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisId", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
+		public short LisId
+		{
+			get
+			{
+				return this._LisId;
+			}
+			set
+			{
+				if ((this._LisId != value))
+				{
+					this.OnLisIdChanging(value);
+					this.SendPropertyChanging();
+					this._LisId = value;
+					this.SendPropertyChanged("LisId");
+					this.OnLisIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisDsc", DbType="Char(40)")]
+		public string LisDsc
+		{
+			get
+			{
+				return this._LisDsc;
+			}
+			set
+			{
+				if ((this._LisDsc != value))
+				{
+					this.OnLisDscChanging(value);
+					this.SendPropertyChanging();
+					this._LisDsc = value;
+					this.SendPropertyChanged("LisDsc");
+					this.OnLisDscChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisPor", DbType="SmallMoney")]
+		public System.Nullable<decimal> LisPor
+		{
+			get
+			{
+				return this._LisPor;
+			}
+			set
+			{
+				if ((this._LisPor != value))
+				{
+					this.OnLisPorChanging(value);
+					this.SendPropertyChanging();
+					this._LisPor = value;
+					this.SendPropertyChanged("LisPor");
+					this.OnLisPorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisCom", DbType="SmallMoney")]
+		public System.Nullable<decimal> LisCom
+		{
+			get
+			{
+				return this._LisCom;
+			}
+			set
+			{
+				if ((this._LisCom != value))
+				{
+					this.OnLisComChanging(value);
+					this.SendPropertyChanging();
+					this._LisCom = value;
+					this.SendPropertyChanged("LisCom");
+					this.OnLisComChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisIvaInc", DbType="Char(1)")]
+		public System.Nullable<char> LisIvaInc
+		{
+			get
+			{
+				return this._LisIvaInc;
+			}
+			set
+			{
+				if ((this._LisIvaInc != value))
+				{
+					this.OnLisIvaIncChanging(value);
+					this.SendPropertyChanging();
+					this._LisIvaInc = value;
+					this.SendPropertyChanged("LisIvaInc");
+					this.OnLisIvaIncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisPie", DbType="Char(150)")]
+		public string LisPie
+		{
+			get
+			{
+				return this._LisPie;
+			}
+			set
+			{
+				if ((this._LisPie != value))
+				{
+					this.OnLisPieChanging(value);
+					this.SendPropertyChanging();
+					this._LisPie = value;
+					this.SendPropertyChanged("LisPie");
+					this.OnLisPieChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PRECIOS")]
+	public partial class PRECIOS : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ArtId;
+		
+		private short _LisId;
+		
+		private System.Nullable<short> _PreMonId;
+		
+		private System.Nullable<decimal> _Artpreant;
+		
+		private System.Nullable<decimal> _ArtPre;
+		
+		private System.Nullable<System.DateTime> _Artfec;
+		
+		private System.Nullable<decimal> _ArtPor;
+		
+		private System.Nullable<decimal> _ArtPorAnt;
+		
+		private System.Nullable<System.DateTime> _ArtVen;
+		
+		private System.Nullable<char> _ArtPreAbierto;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnArtIdChanging(int value);
+    partial void OnArtIdChanged();
+    partial void OnLisIdChanging(short value);
+    partial void OnLisIdChanged();
+    partial void OnPreMonIdChanging(System.Nullable<short> value);
+    partial void OnPreMonIdChanged();
+    partial void OnArtpreantChanging(System.Nullable<decimal> value);
+    partial void OnArtpreantChanged();
+    partial void OnArtPreChanging(System.Nullable<decimal> value);
+    partial void OnArtPreChanged();
+    partial void OnArtfecChanging(System.Nullable<System.DateTime> value);
+    partial void OnArtfecChanged();
+    partial void OnArtPorChanging(System.Nullable<decimal> value);
+    partial void OnArtPorChanged();
+    partial void OnArtPorAntChanging(System.Nullable<decimal> value);
+    partial void OnArtPorAntChanged();
+    partial void OnArtVenChanging(System.Nullable<System.DateTime> value);
+    partial void OnArtVenChanged();
+    partial void OnArtPreAbiertoChanging(System.Nullable<char> value);
+    partial void OnArtPreAbiertoChanged();
+    #endregion
+		
+		public PRECIOS()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ArtId
+		{
+			get
+			{
+				return this._ArtId;
+			}
+			set
+			{
+				if ((this._ArtId != value))
+				{
+					this.OnArtIdChanging(value);
+					this.SendPropertyChanging();
+					this._ArtId = value;
+					this.SendPropertyChanged("ArtId");
+					this.OnArtIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LisId", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
+		public short LisId
+		{
+			get
+			{
+				return this._LisId;
+			}
+			set
+			{
+				if ((this._LisId != value))
+				{
+					this.OnLisIdChanging(value);
+					this.SendPropertyChanging();
+					this._LisId = value;
+					this.SendPropertyChanged("LisId");
+					this.OnLisIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreMonId", DbType="SmallInt")]
+		public System.Nullable<short> PreMonId
+		{
+			get
+			{
+				return this._PreMonId;
+			}
+			set
+			{
+				if ((this._PreMonId != value))
+				{
+					this.OnPreMonIdChanging(value);
+					this.SendPropertyChanging();
+					this._PreMonId = value;
+					this.SendPropertyChanged("PreMonId");
+					this.OnPreMonIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Artpreant", DbType="Money")]
+		public System.Nullable<decimal> Artpreant
+		{
+			get
+			{
+				return this._Artpreant;
+			}
+			set
+			{
+				if ((this._Artpreant != value))
+				{
+					this.OnArtpreantChanging(value);
+					this.SendPropertyChanging();
+					this._Artpreant = value;
+					this.SendPropertyChanged("Artpreant");
+					this.OnArtpreantChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPre", DbType="Money")]
+		public System.Nullable<decimal> ArtPre
+		{
+			get
+			{
+				return this._ArtPre;
+			}
+			set
+			{
+				if ((this._ArtPre != value))
+				{
+					this.OnArtPreChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPre = value;
+					this.SendPropertyChanged("ArtPre");
+					this.OnArtPreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Artfec", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Artfec
+		{
+			get
+			{
+				return this._Artfec;
+			}
+			set
+			{
+				if ((this._Artfec != value))
+				{
+					this.OnArtfecChanging(value);
+					this.SendPropertyChanging();
+					this._Artfec = value;
+					this.SendPropertyChanged("Artfec");
+					this.OnArtfecChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPor", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtPor
+		{
+			get
+			{
+				return this._ArtPor;
+			}
+			set
+			{
+				if ((this._ArtPor != value))
+				{
+					this.OnArtPorChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPor = value;
+					this.SendPropertyChanged("ArtPor");
+					this.OnArtPorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPorAnt", DbType="SmallMoney")]
+		public System.Nullable<decimal> ArtPorAnt
+		{
+			get
+			{
+				return this._ArtPorAnt;
+			}
+			set
+			{
+				if ((this._ArtPorAnt != value))
+				{
+					this.OnArtPorAntChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPorAnt = value;
+					this.SendPropertyChanged("ArtPorAnt");
+					this.OnArtPorAntChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtVen", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ArtVen
+		{
+			get
+			{
+				return this._ArtVen;
+			}
+			set
+			{
+				if ((this._ArtVen != value))
+				{
+					this.OnArtVenChanging(value);
+					this.SendPropertyChanging();
+					this._ArtVen = value;
+					this.SendPropertyChanged("ArtVen");
+					this.OnArtVenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArtPreAbierto", DbType="Char(1)")]
+		public System.Nullable<char> ArtPreAbierto
+		{
+			get
+			{
+				return this._ArtPreAbierto;
+			}
+			set
+			{
+				if ((this._ArtPreAbierto != value))
+				{
+					this.OnArtPreAbiertoChanging(value);
+					this.SendPropertyChanging();
+					this._ArtPreAbierto = value;
+					this.SendPropertyChanged("ArtPreAbierto");
+					this.OnArtPreAbiertoChanged();
 				}
 			}
 		}
