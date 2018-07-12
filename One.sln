@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway API", "Gateway API"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "One.Services.API.Gateway", "One.Services.API.Gateway\One.Services.API.Gateway.csproj", "{9B2FE606-0CC5-4ADB-AAB0-55465A27CC00}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{20266AB3-A6B8-44E8-9582-D1526685EB88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "One.Tools.iGS.Restaurant.Pension", "One.Tools.iGS.Restaurant.Pension\One.Tools.iGS.Restaurant.Pension.csproj", "{E2A350A1-1FB0-4E1C-B754-2027C53270C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{9B2FE606-0CC5-4ADB-AAB0-55465A27CC00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2FE606-0CC5-4ADB-AAB0-55465A27CC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2FE606-0CC5-4ADB-AAB0-55465A27CC00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2A350A1-1FB0-4E1C-B754-2027C53270C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A350A1-1FB0-4E1C-B754-2027C53270C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A350A1-1FB0-4E1C-B754-2027C53270C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2A350A1-1FB0-4E1C-B754-2027C53270C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +91,7 @@ Global
 		{E942E693-B18F-4E7A-B91E-8EDD9DCC406B} = {70F91D3D-E4B3-4913-86C0-032FB29AFEF2}
 		{1CC433D0-D704-418B-B49C-2D03D792A1C1} = {700BD14C-46C2-458C-8502-9D22BCD88010}
 		{9B2FE606-0CC5-4ADB-AAB0-55465A27CC00} = {1CC433D0-D704-418B-B49C-2D03D792A1C1}
+		{E2A350A1-1FB0-4E1C-B754-2027C53270C4} = {20266AB3-A6B8-44E8-9582-D1526685EB88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98D0F63B-19F4-4E7B-8FC8-C6C80D3CC43C}

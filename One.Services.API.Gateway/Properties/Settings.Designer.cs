@@ -26,16 +26,6 @@ namespace One.Services.API.Gateway.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\UsuariosWIFI.accdb")]
-        public string UsuariosWIFIConnectionString {
-            get {
-                return ((string)(this["UsuariosWIFIConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6A8R48U;Initial Catalog=Secundario;Integrated Security=True")]
         public string SecundarioConnectionString {
             get {
@@ -50,6 +40,17 @@ namespace One.Services.API.Gateway.Properties {
         public string ParadiseConnectionString {
             get {
                 return ((string)(this["ParadiseConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=server01;Initial Catalog=Paradise;Persist Security Info=True;User ID=" +
+            "One;Password=RimiSol.2141")]
+        public string ParadiseConnectionString1 {
+            get {
+                return ((string)(this["ParadiseConnectionString1"]));
             }
         }
     }

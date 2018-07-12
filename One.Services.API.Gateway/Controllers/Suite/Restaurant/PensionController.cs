@@ -47,11 +47,30 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 
             }
         }
-        [Route("usevoucher/{id}")]
+
+        [Route("usevoucher/{id}/{operation}")]
         [HttpPost]
-        public HttpResponseMessage UseVoucher([FromUri]int id, [FromBody]int vc)
+        public HttpResponseMessage UseVoucher([FromUri]int id, [FromUri]int? operation, [FromBody]string vc)
         {
-            return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            using (SecundarioDataContext secundario = new SecundarioDataContext())
+            using (ParadiseDataContext paradise = new ParadiseDataContext())
+            {
+                var vouchers = from x in secundario.Pension where x.Id == id select x;
+                if (vouchers.Count() == 0 || vouchers == null) return Request.CreateResponse(HttpStatusCode.NotFound);
+                foreach (var voucher in vouchers)
+                {
+                    if (voucher.Nro != vc) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                    if (voucher.Usado.HasValue) if(voucher.Usado.Value) return Request.CreateResponse(HttpStatusCode.Gone);
+                    voucher.Usado = true;
+                    voucher.FechaUso = DateTime.Now;
+                    voucher.Operation = operation;
+                }
+
+                secundario.SubmitChanges();
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+
+
         }
 
         public class Voucher

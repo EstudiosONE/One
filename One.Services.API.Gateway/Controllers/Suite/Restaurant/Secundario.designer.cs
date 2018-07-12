@@ -30,6 +30,9 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
+    partial void InsertPension(Pension instance);
+    partial void UpdatePension(Pension instance);
+    partial void DeletePension(Pension instance);
     #endregion
 		
 		public SecundarioDataContext() : 
@@ -72,8 +75,10 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pension")]
-	public partial class Pension
+	public partial class Pension : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -97,11 +102,40 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 		
 		private System.Nullable<int> _Operation;
 		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnResNroChanging(System.Nullable<int> value);
+    partial void OnResNroChanged();
+    partial void OnFechaChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaChanged();
+    partial void OnComidaChanging(string value);
+    partial void OnComidaChanged();
+    partial void OnCantidadChanging(System.Nullable<int> value);
+    partial void OnCantidadChanged();
+    partial void OnNroChanging(string value);
+    partial void OnNroChanged();
+    partial void OnUsadoChanging(System.Nullable<bool> value);
+    partial void OnUsadoChanged();
+    partial void OnFechaUsoChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaUsoChanged();
+    partial void OnValDesdeChanging(System.Nullable<System.DateTime> value);
+    partial void OnValDesdeChanged();
+    partial void OnValHastaChanging(System.Nullable<System.DateTime> value);
+    partial void OnValHastaChanged();
+    partial void OnOperationChanging(System.Nullable<int> value);
+    partial void OnOperationChanged();
+    #endregion
+		
 		public Pension()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -112,7 +146,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
@@ -128,7 +166,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._ResNro != value))
 				{
+					this.OnResNroChanging(value);
+					this.SendPropertyChanging();
 					this._ResNro = value;
+					this.SendPropertyChanged("ResNro");
+					this.OnResNroChanged();
 				}
 			}
 		}
@@ -144,7 +186,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Fecha != value))
 				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
 					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
 				}
 			}
 		}
@@ -160,7 +206,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Comida != value))
 				{
+					this.OnComidaChanging(value);
+					this.SendPropertyChanging();
 					this._Comida = value;
+					this.SendPropertyChanged("Comida");
+					this.OnComidaChanged();
 				}
 			}
 		}
@@ -176,7 +226,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Cantidad != value))
 				{
+					this.OnCantidadChanging(value);
+					this.SendPropertyChanging();
 					this._Cantidad = value;
+					this.SendPropertyChanged("Cantidad");
+					this.OnCantidadChanged();
 				}
 			}
 		}
@@ -192,7 +246,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Nro != value))
 				{
+					this.OnNroChanging(value);
+					this.SendPropertyChanging();
 					this._Nro = value;
+					this.SendPropertyChanged("Nro");
+					this.OnNroChanged();
 				}
 			}
 		}
@@ -208,7 +266,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Usado != value))
 				{
+					this.OnUsadoChanging(value);
+					this.SendPropertyChanging();
 					this._Usado = value;
+					this.SendPropertyChanged("Usado");
+					this.OnUsadoChanged();
 				}
 			}
 		}
@@ -224,7 +286,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._FechaUso != value))
 				{
+					this.OnFechaUsoChanging(value);
+					this.SendPropertyChanging();
 					this._FechaUso = value;
+					this.SendPropertyChanged("FechaUso");
+					this.OnFechaUsoChanged();
 				}
 			}
 		}
@@ -240,7 +306,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._ValDesde != value))
 				{
+					this.OnValDesdeChanging(value);
+					this.SendPropertyChanging();
 					this._ValDesde = value;
+					this.SendPropertyChanged("ValDesde");
+					this.OnValDesdeChanged();
 				}
 			}
 		}
@@ -256,7 +326,11 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._ValHasta != value))
 				{
+					this.OnValHastaChanging(value);
+					this.SendPropertyChanging();
 					this._ValHasta = value;
+					this.SendPropertyChanged("ValHasta");
+					this.OnValHastaChanged();
 				}
 			}
 		}
@@ -272,8 +346,32 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
 			{
 				if ((this._Operation != value))
 				{
+					this.OnOperationChanging(value);
+					this.SendPropertyChanging();
 					this._Operation = value;
+					this.SendPropertyChanged("Operation");
+					this.OnOperationChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
