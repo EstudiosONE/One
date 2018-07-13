@@ -47,75 +47,102 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
                 return Request.CreateResponse(HttpStatusCode.OK, Tables);
             }
         }
-
-        class Table
+        [Route("gettable/{id}")]
+        [HttpGet]
+        public HttpResponseMessage GetTablesFromId([FromUri]int id)
         {
-            public int TableNumber { get; set; }
-            public string TableName { get; set; }
-            public TableTypeNames TableType { get; set; }
-            public short Consumers { get; set; }
-            public StateNames State { get; set; }
-            public Operation Operation { get; set; }
-
-            public static TableTypeNames ParseTableType(object value)
+            using (SecundarioDataContext secundario = new SecundarioDataContext())
+            using (ParadiseDataContext paradise = new ParadiseDataContext())
             {
-                switch (value)
+                var query = paradise.MESAPTOVTA.Where(x => x.MesaPtoId == "RES" & x.MesaId == id).SingleOrDefault();
+
+                if (query == default(MESAPTOVTA)) return Request.CreateResponse(HttpStatusCode.NotFound);
+
+                Table table = new Table()
                 {
-                    case 1:
-                        return TableTypeNames.square;
-                    case 2:
-                        return TableTypeNames.rectangular;
-                    case 3:
-                        return TableTypeNames.round;
-                    case 4:
-                        return TableTypeNames.oval;
-                    case 'C':
-                        return TableTypeNames.square;
-                    case 'E':
-                        return TableTypeNames.rectangular;
-                    case 'R':
-                        return TableTypeNames.round;
-                    case 'O':
-                        return TableTypeNames.oval;
-                    default:
-                        throw new ArgumentException("El argumento no pertenece a la lista de argumentos válidos. Argumentos válidos: 1, 2, 3, 4, C, E, R, O");
-                }
-            }
+                    TableNumber = query.MesaId,
+                    TableName = query.MesaDsc.TrimEnd(' '),
+                    TableType = Table.ParseTableType(query.MesaTipo.Value),
+                    Consumers = query.MesaCubiertos.Value,
+                    State = Table.ParseState(query.MesaEstado.Value),
+                    Operation = new Operation()
+                    {
+                        Id = query.MesaTranId.Value
+                    }
+                };
 
-            public static StateNames ParseState(object value)
-            {
-                switch (value)
-                {
-                    case 0:
-                        return StateNames.free;
-                    case 1:
-                        return StateNames.occupied;
-                    case 'D':
-                        return StateNames.free;
-                    case 'O':
-                        return StateNames.occupied;
-                    default:
-                        throw new ArgumentException("El argumento no pertenece a la lista de argumentos válidos. Argumentos válidos: 0, 1, D, O");
-                }
-            }
-
-            public enum TableTypeNames
-            {
-                square = 1,
-                rectangular = 2,
-                round = 3,
-                oval = 4
-            }
-
-            public enum StateNames
-            {
-                free = 0,
-                occupied = 1
+                return Request.CreateResponse(HttpStatusCode.OK, table);
             }
         }
-        class Operation
-        {
+    }
 
+    class Table
+    {
+        public int TableNumber { get; set; }
+        public string TableName { get; set; }
+        public TableTypeNames TableType { get; set; }
+        public short Consumers { get; set; }
+        public StateNames State { get; set; }
+        public Operation Operation { get; set; }
+
+        public static TableTypeNames ParseTableType(object value)
+        {
+            switch (value)
+            {
+                case 1:
+                    return TableTypeNames.square;
+                case 2:
+                    return TableTypeNames.rectangular;
+                case 3:
+                    return TableTypeNames.round;
+                case 4:
+                    return TableTypeNames.oval;
+                case 'C':
+                    return TableTypeNames.square;
+                case 'E':
+                    return TableTypeNames.rectangular;
+                case 'R':
+                    return TableTypeNames.round;
+                case 'O':
+                    return TableTypeNames.oval;
+                default:
+                    throw new ArgumentException("El argumento no pertenece a la lista de argumentos válidos. Argumentos válidos: 1, 2, 3, 4, C, E, R, O");
+            }
         }
+
+        public static StateNames ParseState(object value)
+        {
+            switch (value)
+            {
+                case 0:
+                    return StateNames.free;
+                case 1:
+                    return StateNames.occupied;
+                case 'D':
+                    return StateNames.free;
+                case 'O':
+                    return StateNames.occupied;
+                default:
+                    throw new ArgumentException("El argumento no pertenece a la lista de argumentos válidos. Argumentos válidos: 0, 1, D, O");
+            }
+        }
+
+        public enum TableTypeNames
+        {
+            square = 1,
+            rectangular = 2,
+            round = 3,
+            oval = 4
+        }
+
+        public enum StateNames
+        {
+            free = 0,
+            occupied = 1
+        }
+    }
+    class Operation
+    {
+        public int Id { get; set; }
     }
 }

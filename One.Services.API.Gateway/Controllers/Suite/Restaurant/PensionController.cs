@@ -60,7 +60,17 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
                 foreach (var voucher in vouchers)
                 {
                     if (voucher.Nro != vc) return Request.CreateResponse(HttpStatusCode.BadRequest);
-                    if (voucher.Usado.HasValue) if(voucher.Usado.Value) return Request.CreateResponse(HttpStatusCode.Gone);
+                    if (voucher.ResNro.HasValue)
+                    {
+                        var reserva = paradise.RESERVA.Where(x => x.ResNro == voucher.ResNro).SingleOrDefault();
+                        if (reserva == default(RESERVA)) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                        else
+                        {
+                            if (reserva.ResFecEnt > DateTime.Now) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                            if (reserva.ResFecSal < DateTime.Now) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                        }
+                    }
+                    if (voucher.Usado.HasValue) if (voucher.Usado.Value) return Request.CreateResponse(HttpStatusCode.Gone);
                     voucher.Usado = true;
                     voucher.FechaUso = DateTime.Now;
                     voucher.Operation = operation;

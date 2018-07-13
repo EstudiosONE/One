@@ -66,34 +66,37 @@ namespace One.Services.API.Gateway
                             }
 
                             var operationDetailQuery = from x in paradise.GASTOS1
-                                                       where x.GtoTranId == table.MesaTranId
+                                                       where x.GtoTranId == table.MesaTranId & x.GtoLinCantidad == 1
                                                        select x;
 
                             var operationDetailQuery_Buffet = from x in operationDetailQuery
-                                                                join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
-                                                                where y.ArtSitConId == 50 & x.GtoLinEliminaSupervicion == 'S'
-                                                                select x;
+                                                              join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
+                                                              where y.ArtSitConId == 50 & x.GtoLinEliminaSupervicion == 'S'
+                                                              select x;
                             var operationDetailQuery_Entradas = from x in operationDetailQuery
                                                                 join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
                                                                 where y.ArtSitConId == 1 & x.GtoLinEliminaSupervicion == 'S'
                                                                 select x;
                             var operationDetailQuery_Principales = from x in operationDetailQuery
-                                                                join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
-                                                                where y.ArtSitConId == 2 & x.GtoLinEliminaSupervicion == 'S'
-                                                                select x;
+                                                                   join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
+                                                                   where y.ArtSitConId == 2 & x.GtoLinEliminaSupervicion == 'S'
+                                                                   select x;
                             var operationDetailQuery_Postres = from x in operationDetailQuery
-                                                                join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
-                                                                where y.ArtSitConId == 3 & x.GtoLinEliminaSupervicion == 'S'
-                                                                select x;
+                                                               join y in paradise.ARTICULOS on x.GtoLinArtId equals y.ArtId
+                                                               where y.ArtSitConId == 3 & x.GtoLinEliminaSupervicion == 'S'
+                                                               select x;
 
                             foreach (var lin in operationDetailQuery_Buffet)
                             {
-                                if (entradas > 0 & lin.GtoLinDesId != 999)
+                                if (entradas > 0 & principal > 0 & postre > 0)
                                 {
-                                    lin.GtoLinDesId = 999;
-                                    lin.GtoLinObsDescuento = "Descuento realizado automáticamente por iGS";
-                                    lin.GtoLinImpTotal = 0;
-                                    lin.GtoLinTotSImp = 0;
+                                    if (lin.GtoLinDesId != 999)
+                                    {
+                                        lin.GtoLinDesId = 999;
+                                        lin.GtoLinObsDescuento = "Descuento realizado automáticamente por iGS";
+                                        lin.GtoLinImpTotal = 0;
+                                        lin.GtoLinTotSImp = 0;
+                                    }
 
                                     entradas--;
                                     principal--;
@@ -114,33 +117,33 @@ namespace One.Services.API.Gateway
 
                                     entradas--;
                                 }
-                                else
-                                {
-                                    var a = from x in paradise.PRECIOS
-                                            where x.LisId == operation.GtoCabLisId & x.ArtId == lin.GtoLinArtId
-                                            select x;
-                                }
                             }
                             foreach (var lin in operationDetailQuery_Principales)
                             {
-                                if (principal > 0 & lin.GtoLinDesId != 999)
+                                if (principal > 0)
                                 {
-                                    lin.GtoLinDesId = 999;
-                                    lin.GtoLinObsDescuento = "Descuento realizado automáticamente por iGS";
-                                    lin.GtoLinImpTotal = 0;
-                                    lin.GtoLinTotSImp = 0;
+                                    if (lin.GtoLinDesId != 999)
+                                    {
+                                        lin.GtoLinDesId = 999;
+                                        lin.GtoLinObsDescuento = "Descuento realizado automáticamente por iGS";
+                                        lin.GtoLinImpTotal = 0;
+                                        lin.GtoLinTotSImp = 0;
+                                    }
 
                                     principal--;
                                 }
                             }
                             foreach (var lin in operationDetailQuery_Postres)
                             {
-                                if (postre > 0 & lin.GtoLinDesId != 999)
+                                if (postre > 0)
                                 {
-                                    lin.GtoLinDesId = 999;
-                                    lin.GtoLinObsDescuento = "Descuento realizado automáticamente por iGS";
-                                    lin.GtoLinImpTotal = 0;
-                                    lin.GtoLinTotSImp = 0;
+                                    if (lin.GtoLinDesId != 999)
+                                    {
+                                        lin.GtoLinDesId = 999;
+                                        lin.GtoLinObsDescuento = "Descuento realizado automáticamente por iGS";
+                                        lin.GtoLinImpTotal = 0;
+                                        lin.GtoLinTotSImp = 0;
+                                    }
 
                                     postre--;
                                 }
@@ -158,7 +161,7 @@ namespace One.Services.API.Gateway
 
                             GtoCabImpuesto = GtoCabTotGeneral - GtoCabTotSImpuesto;
 
-                            if(operation.GtoCabTotSImpuesto!= GtoCabTotSImpuesto)
+                            if (operation.GtoCabTotSImpuesto != GtoCabTotSImpuesto)
                                 operation.GtoCabTotSImpuesto = GtoCabTotSImpuesto;
                             if (operation.GtoCabTotGeneral != GtoCabTotGeneral)
                                 operation.GtoCabTotGeneral = GtoCabTotGeneral;
@@ -168,7 +171,28 @@ namespace One.Services.API.Gateway
                             paradise.SubmitChanges();
                         }
                     }
-                    await Task.Delay(10000, cancellationToken);
+
+                    using (SecundarioDataContext secundario = new SecundarioDataContext())
+                    using (ParadiseDataContext paradise = new ParadiseDataContext())
+                    {
+                        var query = from x in secundario.Pension
+                                    where x.FechaUso >= DateTime.Now.Date.AddHours(-2) & x.Operation.HasValue
+                                    select x;
+
+                        foreach (var voucher in query)
+                        {
+                            if(paradise.GASTOS.Where(x=> x.GtoTranId == voucher.Operation.Value).SingleOrDefault() == default(GASTOS))
+                            {
+                                voucher.Usado = null;
+                                voucher.FechaUso = null;
+                                voucher.Operation = null;
+
+                                secundario.SubmitChanges();
+                            }
+                        }
+                    }
+
+                        await Task.Delay(10000, cancellationToken);
                 } while (!cancellationToken.IsCancellationRequested);
             });
 
