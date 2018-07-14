@@ -12,13 +12,14 @@
 <script>
 export default {
   computed: {
-    user: function() {
-      const user = this.$store.getters['system/auth/getActiveUser']
-      return user.name
-    },
     gateway: function() {
       return '"SERVER01"'
-    }
+    },
+    user: function() {
+      const user = this.$store.getters.getUser
+      return `${user.name} ${user.surname}`
+    },
+
   }
 }
 </script>

@@ -7,10 +7,10 @@ Vue.use(Vuex)
 
 const state = {
   user: {
-    name: "Rose Mary",
-    surname: "Blanco",
-    position: "Recepcionista",
-    sex: "F",
+    name: "Usuario",
+    surname: "De pruebas",
+    position: "Administrador",
+    sex: "M",
     profilePicture: ""
   }
 }

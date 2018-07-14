@@ -32,7 +32,7 @@ body {
 .o-header {
   grid-area: 1 / 1 / span 1 / span 2;
   background-color: $clr-white;
-  border-bottom: solid 1px $clr-grey-50;
+  border-bottom: solid 1px $clr-grey-200;
 }
 
 .o-menu {
@@ -64,7 +64,7 @@ body {
 
 .o-footer {
   grid-area: 3 / 2 / span 1 / span 1;
-  background-color: $clr-blue-900;
+  background-color: transparent;
 }
 
 .o-container {

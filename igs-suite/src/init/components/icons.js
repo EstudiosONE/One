@@ -5,6 +5,8 @@ import OneIconsMenuVertical from "../../components/icons/menu-vertical.vue"
 import OneIconsHome from "../../components/icons/home.vue"
 import OneIconsHotel from "../../components/icons/hotel.vue"
 import OneIconsRestaurant from "../../components/icons/restaurant.vue"
+import OneIconsRestaurant_Table from "../../components/icons/restaurant.table.vue"
+import OneIconsRestaurant_Reservation from "../../components/icons/restaurant.reservation.vue"
 import OneIconsManagement from "../../components/icons/management.vue"
 import OneIconsCircleUserMale from "../../components/icons/circle-user-male.vue"
 import OneIconsCircleUserFamale from "../../components/icons/circle-user-famale.vue"
@@ -42,6 +44,8 @@ function init() {
   Vue.component('one-icons-home', OneIconsHome)
   Vue.component('one-icons-hotel', OneIconsHotel)
   Vue.component('one-icons-restaurant', OneIconsRestaurant)
+  Vue.component('one-icons-restaurant-table', OneIconsRestaurant_Table)
+  Vue.component('one-icons-restaurant-reservation', OneIconsRestaurant_Reservation)
   Vue.component('one-icons-management', OneIconsManagement)
 
   // Errores
