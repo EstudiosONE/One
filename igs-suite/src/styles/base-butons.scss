@@ -1,0 +1,67 @@
+.o-button {}
+@mixin button($size) {
+  width: $size;
+  height: $size;
+
+  .icon {
+    width: $size / 2;
+    padding: $size / 4;
+  }
+
+  .label {
+    grid-area: 5 / 1 / 7 / 7;
+    padding: $size / 12;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+}
+
+.o-button-squad-48 {
+  @include button(48px)
+}
+
+.o-button-squad-96 {
+  @include button(96px)
+}
+
+.o-button-squad-192 {
+  @include button(192px)
+}
+@mixin icon($size) {
+  width: $size;
+  height: $size;
+}
+
+.icon-96 {
+  @include icon(96px)
+}
+
+.icon-192 {
+  @include icon(192px)
+}
+
+.icon-m.o-button-squad-48 {
+  .icon {
+    width: 24px;
+    height: 24px;
+    padding: 12px;
+  }
+}
+
+.icon-s.o-button-squad-48 {
+  .icon {
+    width: 16px;
+    height: 16px;
+    padding: 16px;
+  }
+}
+// Comportamiento de los iconos bajo Router-Link
+
+.router-link-active {
+  .o-button-squad-48 {
+    .icon {
+      background-color: $clr-blue;
+
+    }
+  }
+}
