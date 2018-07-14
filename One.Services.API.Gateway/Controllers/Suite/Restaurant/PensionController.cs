@@ -66,8 +66,8 @@ namespace One.Services.API.Gateway.Controllers.Suite.Restaurant
                         if (reserva == default(RESERVA)) return Request.CreateResponse(HttpStatusCode.BadRequest);
                         else
                         {
-                            if (reserva.ResFecEnt > DateTime.Now) return Request.CreateResponse(HttpStatusCode.BadRequest);
-                            if (reserva.ResFecSal < DateTime.Now) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                            if (reserva.ResFecEnt.Value.Date > DateTime.Now.Date) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                            if (reserva.ResFecSal.Value.Date < DateTime.Now.Date) return Request.CreateResponse(HttpStatusCode.BadRequest);
                         }
                     }
                     if (voucher.Usado.HasValue) if (voucher.Usado.Value) return Request.CreateResponse(HttpStatusCode.Gone);

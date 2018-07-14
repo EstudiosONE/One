@@ -31,7 +31,7 @@ namespace One.Tools.iGS.Restaurant.Pension
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("=============================================================");
             Console.WriteLine("==                                                         ==");
-            Console.WriteLine("==  iGS - Rimisol SA | Verificar Pension v: 18.11.07.2000  ==");
+            Console.WriteLine("==  iGS - Rimisol SA | Verificar Pension v: 18.07.14.0900  ==");
             Console.WriteLine("==                                                         ==");
             Console.WriteLine("=============================================================");
             Console.WriteLine("");
@@ -90,6 +90,11 @@ namespace One.Tools.iGS.Restaurant.Pension
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.Write(voucherData.Reservation.CheckOut.ToShortDateString());
                 Console.WriteLine("");
+
+                if (voucherData.Reservation.CheckIn.Date > DateTime.Now.Date || voucherData.Reservation.CheckOut.Date < DateTime.Now.Date)
+                {
+                    VoucherNotValid("periodo");
+                }
             }
             else
             {
@@ -184,16 +189,31 @@ namespace One.Tools.iGS.Restaurant.Pension
             }
         }
 
-        static void VoucherNotValid()
+        static void VoucherNotValid(string error = "")
         {
-            Console.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Debe ingresar un número de voucher válido");
-            Console.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Presione una tecla para continuar...");
-            Console.ReadKey(true);
-            PrintHeader();
+            switch (error)
+            {
+                default:
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Debe ingresar un número de voucher válido");
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Presione una tecla para continuar...");
+                    Console.ReadKey(true);
+                    PrintHeader();
+                    break;
+                case "periodo":
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("El voucher aun no es válido o está vencido");
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Presione una tecla para continuar...");
+                    Console.ReadKey(true);
+                    PrintHeader();
+                    break;
+            }
         }
 
         static void VCNotValid()
