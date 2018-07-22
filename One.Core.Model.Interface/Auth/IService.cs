@@ -11,9 +11,7 @@ namespace One.Core.Auth.Model
         #endregion
 
         #region Metodos
-        #region Publicos
 
-        #endregion
         #endregion
     }
 }

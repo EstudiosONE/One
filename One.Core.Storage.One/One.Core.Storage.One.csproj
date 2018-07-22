@@ -41,25 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Driver.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Driver.dbml</DependentUpon>
-    </Compile>
+    <Compile Include="Driver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Driver.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Driver.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Driver.dbml.layout">
-      <DependentUpon>Driver.dbml</DependentUpon>
-    </None>
+    <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\One.Core.Model.Interface\One.Core.Model.Interface.csproj">
+      <Project>{556c44fa-b01f-4701-8f1c-0e6e94a16f0d}</Project>
+      <Name>One.Core.Model.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\One.Core.Model\One.Core.Model.csproj">
+      <Project>{e942e693-b18f-4e7a-b91e-8edd9dcc406b}</Project>
+      <Name>One.Core.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
