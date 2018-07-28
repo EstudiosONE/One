@@ -10,6 +10,9 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "@material/button": "^0.37.1",
+    "@material/ripple": "^0.37.1",
+    "@material/snackbar": "^0.37.1",
     "trae": "^1.4.2",
     "vue": "^2.5.11",
     "vue-router": "^3.0.1",

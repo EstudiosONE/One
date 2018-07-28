@@ -3,6 +3,7 @@
     #hello
       p.o-text-hello Hola, {{ user }} ;-)
       p.o-text-hello-sub que bueno verte aquí nuevamente!!!
+      button.mdc-button.foo-button Button
     #info
       router-link(to="/help/alert/printserver").alert No podemos comunicarnos con el servidor de impresión
       br
@@ -10,7 +11,12 @@
 </template>
 
 <script>
+import {MDCRipple} from '@material/ripple';
+
 export default {
+  mounted() {
+    const ripple = new MDCRipple(document.querySelector('.foo-button'));
+  },
   computed: {
     gateway: function() {
       return '"SERVER01"'
@@ -26,6 +32,12 @@ export default {
 
 <style scoped lang="scss">
 @import 'src/styles/colors';
+@import "@material/button/mdc-button";
+
+.foo-button {
+  @include mdc-button-ink-color(teal);
+  @include mdc-states(teal);
+}
 .box {
   position: relative;
 }

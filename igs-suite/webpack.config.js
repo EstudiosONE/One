@@ -22,7 +22,12 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./node_modules']
+            }
+          }
         ],
       },
       {
@@ -44,8 +49,13 @@ module.exports = {
             'scss': [
               'vue-style-loader',
               'css-loader',
-              'sass-loader'
-            ],
+              {
+                loader: 'sass-loader',
+                options: {
+                  includePaths: ['./node_modules']
+                }
+              }
+                ],
             'sass': [
               'vue-style-loader',
               'css-loader',
